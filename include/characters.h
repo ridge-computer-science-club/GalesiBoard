@@ -1,3 +1,4 @@
+constexpr char STARTING_CHAR = 'A';
 constexpr uint8_t CHARACTER_SIZE = 5;
 const uint8_t characters[][5] = {
     {0b11111,

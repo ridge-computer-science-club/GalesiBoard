@@ -25,8 +25,6 @@ constexpr size_t COLS = 77;
 // The order in which the LED accepts colour data - [R]ed, [G]reen, [B]lue.
 #define COLOR_ORDER RGB
 
-constexpr char STARTING_CHAR = 'A';
-
 CRGB leds[ROWS][COLS] = {0};
 CRGB bottom[COLS];
 
@@ -134,6 +132,8 @@ void loop()
     delay(50);
     FastLED.show();
   }
+
+  // Don't look at this is nothing nothing to see here folks 
 
   /*
 
