@@ -8,17 +8,17 @@ This program
 // This library is the Arduino Standard Library, which provides all the basic functionality that the hardware provides (for example: timing, input and output, the loop() and setup() functions).
 #include <Arduino.h>
 
-// This is the FastLED library, which is used to control the WS2812B LED that is on the necklace. It provides a lot of very useful functions, and takes care of all the low level data handling for us.
+// This is the FastLED library, which is used to control the WS2812B LEDs that are on the board. It provides a lot of very useful functions, and takes care of all the low level data handling for us.
 #include <FastLED.h>
 
 #include <characters.h>
 
-// These are constants that we define for our program, such as what data pin the LED is attached to, how bright we want the LED to be, and the refresh rate (update rate) of the LED.
-// The data pin that the LED is attached to.
-#define LED_PIN 5
-// How many LEDs are being controlled by the FastLED library. In this case, it's only one.
-#define NUM_LEDS 30
-// How bright the LED should be, on a scale from 0 to 255.
+// These are constants that we define for our program, such as what type of LEDs we are using, how bright we want the LED to be, and the refresh rate (update rate) of the LED.
+// How many LEDs are in each coloumn and row.
+constexpr size_t ROWS = 5;
+constexpr size_t COLS = 77;
+
+// How bright the LEDs should be, on a scale from 0 to 255.
 #define BRIGHTNESS 255
 // The specific type of LED being controlled, so the FastLED library knows how to format the transmitted colour data.
 #define LED_TYPE WS2812B
@@ -26,8 +26,6 @@ This program
 #define COLOR_ORDER RGB
 
 constexpr char STARTING_CHAR = 'A';
-constexpr size_t ROWS = 5;
-constexpr size_t COLS = 77;
 
 CRGB leds[ROWS][COLS] = {0};
 CRGB bottom[COLS];
