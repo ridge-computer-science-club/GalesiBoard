@@ -1,11 +1,11 @@
-function Stopwatch() {
+function StopWatch(time) {
     var time = 0;
     var interval;
     var offset;
     function update() {
         time+=timePassed();
         var formattedTime = timeFormatter(time);
-        console.log(formattedTime)
+        console.log(formattedTime);
         Element.textContent = formattedTime;
     }
     function timePassed() {
@@ -14,11 +14,11 @@ function Stopwatch() {
         offset = now;
         return timePassed;
     }
-    function timeForamtter(timeInMilliseconds) {
+    function timeFormatter(timeInMilliseconds) {
         var time = new Date(timeInMilliseconds);
         var minutes = time.getMinutes().toString();
         var seconds = time.getSeconds().toString();
-        var milliseconds = time.milliseconds().toString();
+        var milliseconds = time.getMilliseconds().toString();
         if(minutes.length <2) {
             minutes = "0" + minutes;
         }
