@@ -1,12 +1,12 @@
-function StopWatch(time) {
+function StopWatch(timeInput) {
     var time = 0;
     var interval;
     var offset;
     function update() {
         time+=timePassed();
         var formattedTime = timeFormatter(time);
-        console.log(formattedTime);
-        Element.textContent = formattedTime;
+        console.log(formattedTime); //logs onto console but not on the web page yet
+        document.documentElement.textContent = formattedTime; // prints it but like not in the right way
     }
     function timePassed() {
         var now = Date.now();
