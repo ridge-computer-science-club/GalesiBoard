@@ -1,14 +1,14 @@
 body {
     text-align: center;
-    margin-top: 400px;
-    background-color:#0e3b1c;
+    margin-top: 380px;
+    background-color:#d628a2;
  }
  
  #timer{
     font-family: "Monaco";
-    font-size: 100px;
+    font-size: 130px;
     font-weight: lighter;
-    color: rgba(204, 71, 71, 0.61);
+    color: rgba(0, 0, 71, 0.5);
  }
  button{
     width: 100px;
