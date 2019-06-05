@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <title>Today's Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     
+       
+</head>
+
+<body>
+                <h1><div id="temp"></div><div id="minutely"></div><div id = "death"></div><div id = "wind"></div><div id = "rain"></div></h1>
+                <h2><div id="location"></div></h2>
+
+        <button onclick="everything()">Print the date, time, and weather</button>
+        <p id="text"></p>
+        
+</script>
+
+        <p id="datetime"> </p>
+        <script>
+                function dateTime(){
+                        document.getElementById("text").innerHTML = ("Today's date and time is:")
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+                }
+        </script>
+
+<script>
+function weather() {
+  var location = document.getElementById("location");
+  var apiKey = "594bcef893696afcfc296f1d697c7cb5";
+  var url = "https://api.darksky.net/forecast/";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+
+  function success(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+
+    location.innerHTML =
+      "Latitude is " + latitude + "° Longitude is " + longitude + "°";
+
+    $.getJSON(
+      url + apiKey + "/" + latitude + "," + longitude + "?callback=?",
+      function(data) {
+        $("#temp").html(data.currently.temperature + "° F");
+        $("#minutely").html(data.minutely.summary);
+        $("#death").html(data.currently.nearestStormDistance + " miles to the nearest death machine storm thingy");
+        $("#wind").html("The wind speed is " + data.currently.windSpeed + " mph");
+        $("#rain").html(data.currently.precipProbability + " % chance of precipitation");
+      }
+    )
+  }
+
+  function error() {
+    location.innerHTML = "Unable to retrieve your location";
+  }
+
+  location.innerHTML = "Locating...";
+
+}
+</script>
+<script>
+    function everything() {
+        dateTime();
+        weather();
+    }
+</script>
+</body>
+</html>
