@@ -36,11 +36,14 @@ CRGB bottom[COLS];
     @param colour The colour of the text.
     @param x The X location of the text on the board.
     @param y The y location of the text on the board.
+    @param &ledArray Reference to a matrix (2-Dimensional Array) of CRGB Objects that makes up the board. In other words, it's an array of arrays that were passed to FastLED.
 */
 void writeText(const char text[], const CRGB colour, const size_t x, const size_t y, CRGB (&ledArray)[ROWS][COLS])
 {
+  // Loop through each character in the given string of text.
   for (int textIndex = 0; textIndex < strlen(text); ++textIndex)
   {
+    // The 
     uint8_t asciiCodeOffset;
     if (text[textIndex] == ' '){
       asciiCodeOffset = 26;
