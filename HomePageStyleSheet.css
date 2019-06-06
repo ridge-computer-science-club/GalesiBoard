@@ -1,9 +1,12 @@
 textarea {
-  border-radius: 15px 50px 30px;
+  border-radius: 25px;
   background: #9bc53d;
-  padding: 20px; 
+  resize: none;
+  padding: 25px;
   width: 200px;
   height: 150px;
+  text-align: center;
+  vertical-align: middle;
 }
 textarea:hover{
   background-color: #9ac53dad;
