@@ -11,7 +11,7 @@
 </head>
 
 <body>
-                <h1><div id="temp"></div><div id="minutely"></div><div id = "death"></div><div id = "wind"></div><div id = "rain"></div></h1>
+                <h1><div id="temp"></div><div id="minutely"></div><div id = "death"></div><div id ="seetime"></div><div id = "wind"></div><div id = "rain"></div></h1>
                 <h2><div id="location"></div></h2>
 
         <button onclick="everything()">Print the date, time, and weather</button>
@@ -51,6 +51,7 @@ function weather() {
         $("#death").html(data.currently.nearestStormDistance + " miles to the nearest death machine storm thingy");
         $("#wind").html("The wind speed is " + data.currently.windSpeed + " mph");
         $("#rain").html(data.currently.precipProbability + " % chance of precipitation");
+        $("#seetime").html("You will be able to see " + data.currently.visibility + " miles around you");
       }
     )
   }
