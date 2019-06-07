@@ -15,17 +15,18 @@
             <div class="box">3</div>
         </div>
         <p>
-        <div class="mdc-text-field" onclick="showSubmitButton()">
+                <div class="mdc-text-field">
+                        <input class="mdc-text-field__input">
+                        <div class="mdc-line-ripple"></div>
+                        <label class="mdc-floating-label">Name</label>
+                      </div>
+        <div class="mdc-text-field">
+            <input class="mdc-text-field__input" type="text" placeholder="Input text here">
             <div class="mdc-line-ripple"></div>
-            <input class="mdc-text-field__input" type="text" name="inputBox" placeholder="Input text here">
+            <div class="mdc-text-field-shape-radius(300)"></div>
+            <div class="mdc-text-field-fill-color('pink')"></div>
         </div>
         </p>
-        <button style="display:none" id="button">Submit</button>
-        <script type="text/javascript">
-            function showSubmitButton()
-            {
-                document.getElementByID("button").style.display="block";
-            }
-        </script>
+        <button id="button">Submit</button>
     </body>
 </html>
