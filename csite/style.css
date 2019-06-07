@@ -1,0 +1,21 @@
+h1, p, button {
+    font-family: "Courier New", monospace;
+    text-align: center;
+} 
+body { 
+    background-image: url(https://webgradients.com/public/webgradients_png/030%20Happy%20Fisher.png);
+} 
+
+form {
+    text-align: center;
+}
+
+input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+}
