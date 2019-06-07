@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+        <button class="foo-button mdc-button">Button</button>
+        <div class="mdc-text-field">
+                <input class="mdc-text-field__input">
+                <div class="mdc-line-ripple"></div>
+                <label class="mdc-floating-label">Name</label>
+              </div>
+// NOTE: this.state.value will vary based on your setup in your component
+    <script>
+    
+    mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+    const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+
+    </script>
+</body>
+
+</html>
