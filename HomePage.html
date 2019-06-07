@@ -4,6 +4,9 @@
         <link rel="stylesheet" type="text/css" href="HomePageStyleSheet.css">
         <meta charset="utf-8">
         <title>GalesiBoard</title>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
         <div class="textbox">
@@ -12,17 +15,16 @@
             <div class="box">3</div>
         </div>
         <p>
-        <div class="mdc-text-field">
+        <div class="mdc-text-field" onclick="showSubmitButton()">
             <div class="mdc-line-ripple"></div>
-            <input onclick="showSubmitButton()" class="mdc-text-field__input" type="text" name="inputBox" placeholder="Input text here">
+            <input class="mdc-text-field__input" type="text" name="inputBox" placeholder="Input text here">
         </div>
         </p>
-        <button id="button">Submit</button>
+        <button style="display:none" id="button">Submit</button>
         <script type="text/javascript">
-            document.getElementByID("button").style.display="none";
             function showSubmitButton()
             {
-                document.getElementByID("button").style.visibility="inline";
+                document.getElementByID("button").style.display="block";
             }
         </script>
     </body>
