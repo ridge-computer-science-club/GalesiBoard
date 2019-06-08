@@ -8,6 +8,18 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-rows: 13em;
 }
+.descriptionBox{
+  background-color: #9bc53d;
+  padding: 2.5em;
+  font-size: 3em;
+  text-align: center;
+  border-radius: 1em;
+  vertical-align: middle;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+.descriptionBox:hover{
+  background-color: #9ac53dad;
+}
 .box {
   background-color: #9bc53d;
   padding: 1em;
@@ -29,8 +41,11 @@
   text-decoration: none;
   display: inline-block;
   font-size: 1.5em;
-  border-radius: 0.75em
-
+  border-radius: 0.75em;
+  vertical-align: middle;
+  position: relative;
+  top: 60%;
+  left: 41%;
 }
 
 .button:hover{
@@ -39,4 +54,16 @@
   border: 0.167em solid #5bc0eb;
   padding: 0.5em 2.3em;
   box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24),0 1.063em 4.167em 0 rgba(0,0,0,0.19);
+}
+
+.Galesiboard{
+  font-size: 4em;
+  color: #5bc0eb;
+  text-align: center;
+}
+
+.mdc-text-field{
+  position: relative;
+  top: 90%;
+  left: 40%;
 }
