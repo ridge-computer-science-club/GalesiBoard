@@ -5,9 +5,29 @@
   padding: 2em;
   grid-column-gap: 3em;
   grid-row-gap: 3em;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: 13em;
 }
+.featuresBox {
+  padding: 1em;
+  font-size: 3em;
+  text-align: center;
+  border-radius: 1em;
+  align-self: center;
+}
+.textbox > div{
+  background-color: #5BC0EB;
+}
+.textbox > div:nth-child(odd){
+  background-color: #fde74c;
+}
+.textbox > div:hover{
+  background-color: rgb(141, 209, 238);
+}
+.textbox > div:nth-child(odd):hover{
+  background-color: #eee38f;
+}
+
 .descriptionBox{
   background-color: #9bc53d;
   padding: 2.5em;
@@ -18,17 +38,6 @@
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 }
 .descriptionBox:hover{
-  background-color: #9ac53dad;
-}
-.box {
-  background-color: #9bc53d;
-  padding: 1em;
-  font-size: 3em;
-  text-align: center;
-  border-radius: 1em;
-  vertical-align: middle;
-}
-.box:hover{
   background-color: #9ac53dad;
 }
 
