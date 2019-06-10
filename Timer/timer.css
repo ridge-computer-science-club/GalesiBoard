@@ -1,5 +1,6 @@
 body {
     text-align: center;
+<<<<<<< HEAD
     margin-top: 400px;
     background-color:#0e3b1c;
 }
@@ -17,4 +18,41 @@ button{
 
 button:hover{
     cursor: pointer;
-}
+}}
+=======
+    margin-top: 300px;
+    background-color:#d628a2;
+ }
+ 
+ #timer{
+    font-family: "Monaco";
+    font-size: 130px;
+    font-weight: lighter;
+    color: rgba(0, 0, 71, 0.5);
+ }
+ button{
+    width: 160px;
+    height: 50px;
+    border: ridge;
+    border-radius: 20px;
+    border-color:rgba(0, 0, 71, 0.5);
+    background:#0000;
+    font-family: "Monaco";
+    font-size: 20px;
+    
+ }
+ 
+ button:hover{
+    cursor: pointer;
+    color:#b2aba9;
+    background:rgba(0, 0, 71, 0.5);
+ }
+ 
+ header {
+   padding: 60px;
+   text-align: center;
+   background: #1abc9c;
+   color: white;
+   font-size: 30px;
+ }
+>>>>>>> a0de5b82feb0092393052c5d4f0bafb59d7b05ee
