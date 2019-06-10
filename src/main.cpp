@@ -81,9 +81,11 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
   }
 }
 
-void setup()
-{
-  FastLED.addLeds<LED_TYPE, 23>(leds[0], COLS).setCorrection(TypicalLEDStrip);
+char incomingByte;      // a variable to read incoming serial data into
+String hi = "";
+
+void setup() {
+   FastLED.addLeds<LED_TYPE, 23>(leds[0], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 22>(leds[1], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 21>(leds[2], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 20>(leds[3], COLS).setCorrection(TypicalLEDStrip);
@@ -92,56 +94,18 @@ void setup()
   FastLED.addLeds<LED_TYPE, 9>(bottom, COLS).setCorrection(TypicalLEDStrip);
 
   FastLED.setBrightness(BRIGHTNESS);
+  // initialize serial communication:
+  Serial.begin(9600);
 }
 
-void loop()
-{
-  for (int i = 80; i > 6; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("APPLAUSE!!!", CRGB::Green, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
-
-
-  delay(4000);
-
-  for (int i = 6; i > -80; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("APPLAUSE!!!", CRGB::Green, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
-
-  for (int i = 80; i > 0; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("GALESI BOARD", CRGB::Red, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
-
-  delay(4000);
-
-  for (int i = 0; i > -80; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("GALESI BOARD", CRGB::Red, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
+void loop() {
+  // see if there's incoming serial data:
+ 
+  while (Serial.available() > 0) {
+    // read the oldest byte in the serial buffer:
+    incomingByte = Serial.read();
+    hi = hi.append(incomingByte);
+    writeText(hi.c_str(), CRGB::SeaGreen, 5, 0, leds);
+    }
+   // Serial.write(incomingByte);
 }
