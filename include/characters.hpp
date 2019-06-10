@@ -1,4 +1,4 @@
-constexpr char STARTING_CHAR = 'A';
+constexpr char STARTING_CHAR = '!';
 constexpr uint8_t CHARACTER_SIZE = 5;
 
 // Character bitmaps for Bit5x5, from https://gist.github.com/uXeBoy/e3cfefcbe287d925d18f23cf450b17af
