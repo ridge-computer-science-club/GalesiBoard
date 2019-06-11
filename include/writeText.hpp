@@ -10,7 +10,7 @@
 void writeText(const char text[], const CRGB colour, const size_t x, const size_t y, CRGB (&ledArray)[ROWS][COLS])
 {
     // Loop through each character in the given string of text.
-    for (int textIndex = 0; textIndex < strlen(text); ++textIndex)
+    for (size_t textIndex = 0; textIndex < strlen(text); ++textIndex)
     {
         // The
         const uint8_t asciiCodeOffset = text[textIndex] - STARTING_CHAR;

@@ -1,9 +1,3 @@
-constexpr char START_TEXT = 0x02;
-constexpr char END_TEXT = 0x03;
-
-constexpr char STARTING_CHAR = '!';
-constexpr uint8_t CHARACTER_SIZE = 5;
-
 // Character bitmaps for Bit5x5, from https://gist.github.com/uXeBoy/e3cfefcbe287d925d18f23cf450b17af
 const uint8_t characters[][5] =
     {
