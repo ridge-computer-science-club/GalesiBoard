@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+.DS_Store
+=======
 .pio
 .pioenvs
 .piolibdeps
@@ -6,3 +10,4 @@
 .vscode/launch.json
 .DS_Store
 .directory
+>>>>>>> a0de5b82feb0092393052c5d4f0bafb59d7b05ee
