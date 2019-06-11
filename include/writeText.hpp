@@ -13,19 +13,7 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
     for (int textIndex = 0; textIndex < strlen(text); ++textIndex)
     {
         // The
-        uint8_t asciiCodeOffset;
-        if (text[textIndex] == ' ')
-        {
-            asciiCodeOffset = 26;
-        }
-        else if (text[textIndex] == '!')
-        {
-            asciiCodeOffset = 27;
-        }
-        else
-        {
-            asciiCodeOffset = text[textIndex] - STARTING_CHAR;
-        }
+        const uint8_t asciiCodeOffset = text[textIndex] - STARTING_CHAR;
 
         for (int characterRow = 0; characterRow < CHARACTER_SIZE; ++characterRow)
         {

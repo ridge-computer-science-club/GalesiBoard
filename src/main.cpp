@@ -32,10 +32,8 @@ constexpr size_t COLS = 77;
 CRGB leds[ROWS][COLS] = {0};
 CRGB bottom[COLS];
 
-char incomingByte;      // a variable to read incoming serial data into
-String hi = "";
-
-void setup() {
+void setup()
+{
   FastLED.addLeds<LED_TYPE, 23>(leds[0], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 22>(leds[1], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 21>(leds[2], COLS).setCorrection(TypicalLEDStrip);
@@ -45,18 +43,62 @@ void setup() {
   FastLED.addLeds<LED_TYPE, 9>(bottom, COLS).setCorrection(TypicalLEDStrip);
 
   FastLED.setBrightness(BRIGHTNESS);
+
   // initialize serial communication:
   Serial.begin(9600);
+  Serial.println("<Arduino is ready>");
 }
 
-void loop() {
-  // see if there's incoming serial data:
- 
-  while (Serial.available() > 0) {
-    // read the oldest byte in the serial buffer:
-    incomingByte = Serial.read();
-    hi = hi.append(incomingByte);
-    writeText(hi.c_str(), CRGB::SeaGreen, 5, 0, leds);
+// Serial handling from https://forum.arduino.cc/index.php?topic=396450
+#define TEXT_BUFFER_LENGTH 32
+char textBuffer[TEXT_BUFFER_LENGTH];
+
+boolean newData = false;
+
+void recieveData()
+{
+  static boolean incomingData = false;
+  static uint8_t index = 0;
+  char receivedCharacter;
+
+  while (Serial.available() > 0 && newData == false)
+  {
+    receivedCharacter = Serial.read();
+
+    if (incomingData)
+    {
+      if (receivedCharacter != END_TEXT)
+      {
+        textBuffer[index] = receivedCharacter;
+        index++;
+        if (index >= TEXT_BUFFER_LENGTH)
+        {
+          index = TEXT_BUFFER_LENGTH - 1;
+        }
+      }
+      else
+      {
+        //textBuffer[index] = '\0'; // terminate the string - commented out as we do not want to terminate the string for writeText
+        incomingData = false;
+        index = 0;
+        newData = true;
+      }
     }
-   // Serial.write(incomingByte);
+    else if (receivedCharacter == START_TEXT)
+    {
+      incomingData = true;
+    }
+  }
+}
+
+void loop()
+{
+  recieveData();
+
+  if (newData)
+  {
+    Serial.print("Received: ");
+    Serial.println(textBuffer);
+    writeText(textBuffer, CRGB::Cyan, 0, 0, leds);
+  }
 }
