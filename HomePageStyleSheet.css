@@ -54,10 +54,14 @@
 .descriptionBox{
   background-color: #9bc53d;
   padding: 2.5em;
-  font-size: 3em;
+  font-size: 1.5em;
   text-align: center;
   border-radius: 1em;
   vertical-align: middle;
+  display: flex;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 }
 .descriptionBox:hover{
@@ -93,6 +97,7 @@
   font-size: 4em;
   color: #5bc0eb;
   text-align: center;
+  font-family: 'AdvancedLED-Board-7';
 }
 
 .mdc-text-field{
@@ -124,6 +129,14 @@
   border: 0.167em solid #5bc0eb;
   padding: 0.5em 2.3em;
   box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24),0 1.063em 4.167em 0 rgba(0,0,0,0.19);
+}
+
+@font-face {
+  font-family: 'AdvancedLED-Board-7 (1)';
+  src: url('/css/webfont/AdvancedLED-Board-7.ttf') format('truetype'); 
+  src: url('/css/webfont/AdvancedLED-Board-7.woff') format('woff'), 
+       url('/css/webfont/AdvancedLED-Board-7.svg') format('svg'),
+       url('/css/webfont/AdvancedLED-Board-7.svg') format('embedded-opentype'),
 }
 
 }
