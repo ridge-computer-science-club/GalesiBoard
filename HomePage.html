@@ -8,11 +8,38 @@
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="LED font stylesheet" type="text/css" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
-    <h1 class="Galesiboard">
+    <h1 class="wrapper" class="Galesiboard">
         GALESIBOARD
     </h1>
     <body>
+        <figure class="wrapper" class="w3-content" style="max-width:200px">
+            <img class="pictures" src ="EditGalesi1.jpg.png" style ="max-width:100%;max-height:100%;">
+            <img class="pictures" src ="EditGalesi2.jpg" style ="max-width:100%;max-height:100%;">
+            <img class="pictures" src ="EditGalesi3.jpg" style ="max-width:100%;max-height:100%;">
+            <img class="pictures" src ="EditGalesi4.jpg" style ="max-width:100%;max-height:100%;">
+            <img class="pictures" src ="EditGalesi5.jpg" style ="max-width:100%;max-height:100%;">
+            <img class="pictures" src ="EditGalesi7.jpg" style ="max-width:100%;max-height:100%;">
+        </figure>
+        </div>
+        <script>
+                var slideIndex = 0;
+                carousel();
+                
+                function carousel() {
+                  var i;
+                  var x = document.getElementsByClassName("pictures");
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none"; 
+                  }
+                  slideIndex++;
+                  if (slideIndex > x.length) {slideIndex = 1} 
+                  x[slideIndex-1].style.display = "block"; 
+                  setTimeout(carousel, 2000); 
+                }
+        </script>
         <p>
         <div class="descriptionBox">
             Welcome to GalesiBoard! You can input your personalized message and watch it magically materialize on this interactive LED board! Not only can you display pictures of your choice, but you can also play exciting and innovative games!
