@@ -2,6 +2,15 @@
 const uint8_t characters[][5] =
     {
         {
+            // @0 ' ' (5 pixels wide)
+            0x00, //   
+            0x00, //   
+            0x00, //   
+            0x00, //
+            0x00, //
+
+        },
+        {
             // @0 '!' (5 pixels wide)
             0x20, //   #
             0x20, //   #
@@ -611,5 +620,4 @@ const uint8_t characters[][5] =
             0x00, //
             0x00, //
             0x00, //
-        }
-    };
+        }};

@@ -40,7 +40,7 @@ void setup()
 }
 
 // Serial handling from https://forum.arduino.cc/index.php?topic=396450
-#define TEXT_BUFFER_LENGTH 32
+#define TEXT_BUFFER_LENGTH 64
 char textBuffer[TEXT_BUFFER_LENGTH];
 
 boolean newData = false;
@@ -83,12 +83,14 @@ void recieveData()
 
 void loop()
 {
-  recieveData();
-
-  if (newData)
+ // recieveData();
+writeText("HI", CRGB::Red, 0, 0, leds);
+ /*  if (newData)
   {
     Serial.print("Received: ");
     Serial.println(textBuffer);
     writeText(textBuffer, CRGB::Cyan, 0, 0, leds);
+    newData = false;
   }
+  */
 }

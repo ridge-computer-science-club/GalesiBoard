@@ -14,5 +14,5 @@ constexpr size_t COLS = 77;
 constexpr char START_TEXT = '<'; //0x02;
 constexpr char END_TEXT = '>';   //0x03;
 
-constexpr char STARTING_CHAR = '!';
+constexpr char STARTING_CHAR = ' ';
 constexpr uint8_t CHARACTER_SIZE = 5;
