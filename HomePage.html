@@ -12,6 +12,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="particles.min.js", crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     
 
 
     <link rel="stylesheet" type="text/css" href="HomePageStyleSheet.css">
@@ -28,6 +30,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script src = "weather.js"></script>
+    
 </head>
 
 <body>
@@ -85,14 +90,35 @@
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="featuresBox">1</div>
+            <div class="popup featuresBox" onclick = "popUp(); everything()">1. Weather, Date, and Time
+                <span class = "popuptext" id = "myPopup">
+                    <p id = "text"></p>
+                    <p id = "datetime"></p>
+                    <div id="temp"></div>
+                    <div id="minutely"></div>
+                    <div id = "death"></div>
+                    <div id ="seetime"></div>
+                    <div id = "wind"></div>
+                    <div id = "rain"></div>
+                    <p id = "location"></p>
+                    <button>Post this to GalesiBoard</button>
+                </span>
+            </div>
             <div class="featuresBox">2</div>
             <div class="featuresBox">3</div>
             <div class="featuresBox">4</div>
         </div>
     </p>
+
+    <script>
+            function popUp(){
+                var popup = document.getElementById("myPopup");
+                popup.classList.toggle("show");
+            }
+    </script>
     <br></br>
     <button class="loadMore" id="button">Load More Features</button>
+
 
 </body>
 
