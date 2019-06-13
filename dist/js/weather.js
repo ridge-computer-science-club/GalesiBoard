@@ -43,7 +43,7 @@ function weather() {
 
 function post() {
     //Need to change Url to GalesiBoard. It is currently just a website that tests post requests.
-    const Url = 'https://webhook.site/f58ceaeb-326b-4446-ab0d-fdecdfab99a7';
+    const Url = 'http://localhost:8080/post/';
     const dada = {
         temp: document.getElementById("temp").innerHTML,
         minutely: document.getElementById("minutely").innerHTML,
@@ -53,9 +53,25 @@ function post() {
         seetime: document.getElementById("seetime").innerHTML
     }
 
+   test = fetch(Url, {
+        method: 'POST',
+        mode: 'same-origin',
+        headers: {
+            'Accept': 'text/plain',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dada)
+    }).then((result) => {
+            console.log(result);
+            return result.text();
+        }).then(data => {
+            console.log(data);
+            return data;
+    });
+/*
     $.post(Url, dada, function(dada, status) {
         console.log('${dada} and status is ${status}')
-    });
+    }); */
 }
 
 function everything() {
