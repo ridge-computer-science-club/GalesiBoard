@@ -1,9 +1,8 @@
-
 function dateTime() {
     document.getElementById("text").innerHTML = ("Today's date and time is:")
     var dt = new Date();
-    document.getElementById("datetime").innerHTML = (("0" + (dt.getMonth() + 1)).slice(-2)) + "/" + (("0" + dt.getDate()).slice(-2))
-        + "/" + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    document.getElementById("datetime").innerHTML = (("0" + (dt.getMonth() + 1)).slice(-2)) + "/" + (("0" + dt.getDate()).slice(-2)) +
+        "/" + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
 }
 
 
@@ -23,7 +22,7 @@ function weather() {
 
         $.getJSON(
             url + apiKey + "/" + latitude + "," + longitude + "?callback=?",
-            function (data) {
+            function(data) {
                 $("#temp").html(data.currently.temperature + "° F");
                 $("#minutely").html(data.minutely.summary);
                 $("#death").html(data.currently.nearestStormDistance + " miles to the nearest death machine storm thingy");
@@ -54,7 +53,7 @@ function post() {
         seetime: document.getElementById("seetime").innerHTML
     }
 
-    $.post(Url, dada, function (dada, status) {
+    $.post(Url, dada, function(dada, status) {
         console.log('${dada} and status is ${status}')
     });
 }
