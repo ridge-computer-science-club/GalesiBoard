@@ -144,10 +144,10 @@
 
 @font-face {
   font-family: 'LED';
-  src: url('fonts/AdvancedLEDBoard-7.ttf') format('truetype'), 
-       url('fonts/AdvancedLEDBoard-7.woff') format('woff'), 
-       url('fonts/AdvancedLEDBoard-7.svg') format('svg'),
-       url('fonts/AdvancedLEDBoard-7.svg') format('embedded-opentype');
+  src: url('/fonts/AdvancedLEDBoard-7.ttf') format('truetype'), 
+       url('/fonts/AdvancedLEDBoard-7.woff') format('woff'), 
+       url('/fonts/AdvancedLEDBoard-7.svg') format('svg'),
+       url('/fonts/AdvancedLEDBoard-7.eot') format('embedded-opentype');
 }
 
 .pictures{
