@@ -14,6 +14,7 @@ public class PostServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // not a good way to get data, should use keys and stuff.
         String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 
         // Write your code here that uses data.

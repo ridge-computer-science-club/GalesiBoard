@@ -17,7 +17,7 @@ public class JettyMain {
         Server server = new Server(8080);
 
 
-        ServletContextHandler servletContextHandler = new ServletContextHandler(server, "/post");
+        ServletContextHandler servletContextHandler = new ServletContextHandler(server, "/post/");
         servletContextHandler.addServlet(PostServlet.class, "/");
 
         // Create the ResourceHandler. It is the object that will actually handle the request for a given file. It is
