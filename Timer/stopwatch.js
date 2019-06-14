@@ -53,6 +53,7 @@ function StopWatch(element) {
     };
     this.reset = function() {
         time = 0;
+        update2();
     };
 }
 
