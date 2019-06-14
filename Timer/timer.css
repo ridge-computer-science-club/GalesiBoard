@@ -1,6 +1,5 @@
 body {
     text-align: center;
-<<<<<<< HEAD
     margin-top: 400px;
     background-color:#0e3b1c;
 }
@@ -19,7 +18,6 @@ button{
 button:hover{
     cursor: pointer;
 }
-=======
     margin-top: 300px;
     background-color:#d628a2;
  }
@@ -55,4 +53,3 @@ button:hover{
    color: white;
    font-size: 30px;
  }
->>>>>>> a0de5b82feb0092393052c5d4f0bafb59d7b05ee
