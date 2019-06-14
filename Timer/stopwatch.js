@@ -1,3 +1,4 @@
+
 function StopWatch(element) {
     var time = 0;
     var interval;
@@ -23,19 +24,18 @@ function StopWatch(element) {
         var minutes = time.getMinutes().toString();
         var seconds = time.getSeconds().toString();
         var milliseconds = time.getMilliseconds().toString();
+
         if(minutes.length <2) {
             minutes = "0" + minutes;
         }
         if(seconds.length <2) {
             seconds = "0" + seconds;
         }
-        
         while(milliseconds.length <3) {
             milliseconds = "0" + milliseconds;
         }
         return minutes + " : " + seconds + " . " + milliseconds;
     }
-
     this.isOn = false;
     this.start = function() {
         if(!this.isOn){
@@ -55,5 +55,4 @@ function StopWatch(element) {
         time = 0;
         update2();
     };
-}
-
+ }
