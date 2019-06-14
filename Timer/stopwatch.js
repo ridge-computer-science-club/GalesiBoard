@@ -52,11 +52,7 @@ function StopWatch(element) {
         }
         return minutes + " : " + seconds + " . " + milliseconds;
     }
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> a0de5b82feb0092393052c5d4f0bafb59d7b05ee
     this.isOn = false;
     this.start = function() {
         if(!this.isOn){
@@ -74,14 +70,7 @@ function StopWatch(element) {
     };
     this.reset = function() {
         time = 0;
-<<<<<<< HEAD
         update();
     };
 }
 
-=======
-        update2();
-    };
- }
- 
->>>>>>> a0de5b82feb0092393052c5d4f0bafb59d7b05ee
