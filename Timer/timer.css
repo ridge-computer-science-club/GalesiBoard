@@ -1,23 +1,5 @@
 body {
     text-align: center;
-    margin-top: 400px;
-    background-color:#0e3b1c;
-}
-
-#timer{
-    font-family: "Monaco";
-    font-size: 100px;
-    font-weight: lighter;
-    color: rgba(255, 255, 255, 0.61);
-}
-button{
-    width: 100px;
-    height: 35px;
-}
-
-button:hover{
-    cursor: pointer;
-}
     margin-top: 300px;
     background-color:#d628a2;
  }
