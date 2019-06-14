@@ -1,37 +1,20 @@
 body {
     text-align: center;
-    margin-top: 300px;
-    background-color:#d628a2;
- }
- 
- #timer{
+    margin-top: 400px;
+    background-color:#0e3b1c;
+}
+
+#timer{
     font-family: "Monaco";
-    font-size: 130px;
+    font-size: 100px;
     font-weight: lighter;
-    color: rgba(0, 0, 71, 0.5);
- }
- button{
-    width: 160px;
-    height: 50px;
-    border: ridge;
-    border-radius: 20px;
-    border-color:rgba(0, 0, 71, 0.5);
-    background:#0000;
-    font-family: "Monaco";
-    font-size: 20px;
-    
- }
- 
- button:hover{
+    color: rgba(255, 255, 255, 0.61);
+}
+button{
+    width: 100px;
+    height: 35px;
+}
+
+button:hover{
     cursor: pointer;
-    color:#b2aba9;
-    background:rgba(0, 0, 71, 0.5);
- }
- 
- header {
-   padding: 60px;
-   text-align: center;
-   background: #1abc9c;
-   color: white;
-   font-size: 30px;
- }
+}
