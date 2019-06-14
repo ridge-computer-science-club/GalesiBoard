@@ -46,11 +46,7 @@ function StopWatch(element) {
         if(seconds.length <2) {
             seconds = "0" + seconds;
         }
-<<<<<<< HEAD
         
-=======
-       
->>>>>>> a0de5b82feb0092393052c5d4f0bafb59d7b05ee
         while(milliseconds.length <3) {
             milliseconds = "0" + milliseconds;
         }
