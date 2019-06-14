@@ -1,4 +1,4 @@
-function countdown()
+clicker.addEventListener("click", function countdown()
         {
             var x;
             var y;
@@ -42,4 +42,4 @@ function countdown()
             }
                 
         }
-        
+);
