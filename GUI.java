@@ -27,6 +27,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
+import javax.swing.AbstractButton;
 
 public class GUI {
     public static void main(String[] args) {
@@ -38,10 +39,8 @@ public class GUI {
         Font[] allFonts = ge.getAllFonts();
 
         Color blue = new Color(91, 192, 235);
-        Color yellow = new Color(253, 231, 76);
         Color green = new Color(155, 197, 61);
         Color orange = new Color(250, 131, 33);
-        Color red = new Color(229, 89, 52);
 
         final ArrayList<String> classNames = new ArrayList<String>();
         final JComboBox<String> options = new JComboBox<String>();
@@ -60,6 +59,7 @@ public class GUI {
             System.out.println(main);
         }
         final JFrame frame = new JFrame("RandomNamePicker(Beta v1.0.1)");
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(3);
         final JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
@@ -69,26 +69,29 @@ public class GUI {
         frame.add(mainPanel);
         GUI.makeBackground(mainPanel);
         GUI.addCombo(options, classNames, mainPanel);
-        frame.setSize(800, 600);
+        frame.setSize(700, 500);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.repaint();
+        options.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 12));
         options.setSize(200, 30);
         options.setLocation(470, 220);
+        options.setForeground(orange);
         mainPanel.add(options);
-        final JLabel name = new JLabel("No Names Yet...");
-        name.setLocation(50, 25);
-        name.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 50));
-        name.setSize(600, 80);
+        final JLabel name = new JLabel(" Select a Class and Generate...");
+        name.setLocation(10, 25);
+        name.setSize(500, 100);
+        name.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 100));
+        name.setOpaque(true);
         name.setBackground(Color.WHITE);
-        name.setForeground(red);
+        name.setForeground(orange);
         mainPanel.add(name);
         final ArrayList names = new ArrayList();
-        final JButton bgenerate = new JButton("GENERATE");
+        JButton bgenerate = new JButton("GENERATE");
         bgenerate.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 10));
         bgenerate.setBackground(green);
         bgenerate.setForeground(green);
-
+        bgenerate.setVerticalTextPosition(AbstractButton.CENTER);
         bgenerate.addActionListener(new ActionListener(){
 
             @Override
@@ -107,9 +110,9 @@ public class GUI {
                     main = "";
                 }
                 if (names.size() > 0) {
-                    name.setText((String)names.get((int)(Math.random() * (double)(names.size() + 1))));
+                    name.setText(" " + (String)names.get((int)(Math.random() * (double)(names.size() + 1))));
                 } else {
-                    name.setText("No Name Yet...");
+                    name.setText(" No Name Yet...");
                 }
                 mainPanel.repaint();
                 frame.repaint();
@@ -255,6 +258,7 @@ public class GUI {
         JTextField text = new JTextField();
         text.setSize(200, 100);
         text.setLocation(300, 300);
+        text.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 12));
         frame.add(text);
         frame.repaint();
         return text;
@@ -270,9 +274,13 @@ public class GUI {
     }
 
     public static void addStudents(JPanel frame, final String location) {
+        Color green = new Color(155, 197, 61);
         final JTextField text = GUI.createText(frame);
         JButton submit = new JButton("Submit");
         submit.setSize(100, 50);
+        submit.setFont(new Font("Advanced LED Board-7", 0, 24));
+        submit.setBackground(Color.WHITE);
+        submit.setForeground(green);
         submit.setLocation(350, 400);
         submit.addActionListener(new ActionListener(){
 
@@ -289,11 +297,16 @@ public class GUI {
     }
 
     public static void makeClass(JFrame frame, final ArrayList<String> classNames, final JPanel panel, final JComboBox<String> options) {
+        frame.setBackground(new Color(91, 192, 235));
         final JTextField text = new JTextField();
         text.setSize(200, 75);
+        text.setFont(new Font("Advanced LED Board-7", 0, 24));
         text.setLocation(10, 10);
         frame.add(text);
         JButton submit = new JButton("Submit");
+        submit.setFont(new Font("Advanced LED Board-7", 0, 24));
+        submit.setBackground(Color.WHITE);
+        submit.setForeground(new Color(155, 197, 61));
         submit.setSize(100, 50);
         submit.setLocation(60, 105);
         submit.addActionListener(new ActionListener(){
@@ -327,7 +340,7 @@ public class GUI {
         name.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 42));
         name.setSize(500, 300);
         name.setLocation(20, 80);
-        name.setForeground(Color.WHITE);
+        name.setForeground(new Color(253, 231, 76));
         frame.add(name);
         frame.repaint();
     }
