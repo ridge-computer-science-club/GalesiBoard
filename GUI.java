@@ -25,9 +25,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.GraphicsEnvironment;
 
 public class GUI {
     public static void main(String[] args) {
+
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
+        String[] fontNames = ge.getAvailableFontFamilyNames();
+
+        Font[] allFonts = ge.getAllFonts();
+
+        Color blue = new Color(91, 192, 235);
+        Color yellow = new Color(253, 231, 76);
+        Color green = new Color(155, 197, 61);
+        Color orange = new Color(250, 131, 33);
+        Color red = new Color(229, 89, 52);
+
         final ArrayList<String> classNames = new ArrayList<String>();
         final JComboBox<String> options = new JComboBox<String>();
         String classes = GUI.reader("allClasses");
@@ -48,7 +63,8 @@ public class GUI {
         frame.setDefaultCloseOperation(3);
         final JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
-        mainPanel.setSize(800, 600);
+        mainPanel.setSize(700, 500);
+        mainPanel.setBackground(blue);
         mainPanel.setVisible(true);
         frame.add(mainPanel);
         GUI.makeBackground(mainPanel);
@@ -60,13 +76,19 @@ public class GUI {
         options.setSize(200, 30);
         options.setLocation(470, 220);
         mainPanel.add(options);
-        final JLabel name = new JLabel("NoName");
-        name.setSize(400, 80);
+        final JLabel name = new JLabel("No Names Yet...");
         name.setLocation(50, 25);
-        name.setFont(new Font("Serif", 0, 24));
+        name.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 50));
+        name.setSize(600, 80);
+        name.setBackground(Color.WHITE);
+        name.setForeground(red);
         mainPanel.add(name);
         final ArrayList names = new ArrayList();
         final JButton bgenerate = new JButton("GENERATE");
+        bgenerate.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 10));
+        bgenerate.setBackground(green);
+        bgenerate.setForeground(green);
+
         bgenerate.addActionListener(new ActionListener(){
 
             @Override
@@ -87,7 +109,7 @@ public class GUI {
                 if (names.size() > 0) {
                     name.setText((String)names.get((int)(Math.random() * (double)(names.size() + 1))));
                 } else {
-                    name.setText("NoName");
+                    name.setText("No Name Yet...");
                 }
                 mainPanel.repaint();
                 frame.repaint();
@@ -293,7 +315,7 @@ public class GUI {
     public static void makeGenerate(JPanel frame, JButton generate, JLabel name) {
         name.setSize(400, 80);
         name.setLocation(50, 25);
-        name.setFont(new Font("Serif", 0, 24));
+        name.setFont(new Font("Advanced LED Board-7", 0, 24));
         frame.add(name);
         generate.setSize(100, 25);
         generate.setLocation(350, 400);
@@ -302,9 +324,10 @@ public class GUI {
 
     public static void makeBackground(JPanel frame) {
         JLabel name = new JLabel("Random Name Picker");
-        name.setFont(new Font("Sherif", 0, 30));
+        name.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 42));
         name.setSize(500, 300);
-        name.setLocation(50, 80);
+        name.setLocation(20, 80);
+        name.setForeground(Color.WHITE);
         frame.add(name);
         frame.repaint();
     }
