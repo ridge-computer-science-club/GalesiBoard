@@ -40,6 +40,16 @@
         color: #5bc0eb;
         text-align: center;
         font-family: LED;
+        background-color: white;
+        padding-top: 0.2em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        padding-bottom: 0.2em;
+        border-radius: 1em;
+        vertical-align: middle;
+        margin-left: 6em;
+        margin-right: 6em;
+        margin-bottom: 0.5em;
     }
 
     .allFeatures {
@@ -134,8 +144,19 @@
         grid-area: title;
         justify-self: center;
         align-self: center;
-        margin-top: 1em;
+        margin-top: 0.2em;
         color: #5bc0eb;
+        background-color: white;
+        padding-top: 0.2em;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        padding-bottom: 0.1em;
+        border-radius: 1em;
+        vertical-align: middle;
+        /*height: 150px;*/
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-bottom: 0.5em;
 
     }
 
