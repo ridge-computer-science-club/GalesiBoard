@@ -16,7 +16,7 @@ This is the program to control GalesiBoard. It currently displays animated text 
 // These are constants that we define for our program, such as what type of LEDs we are using, how bright we want the LED to be, and the refresh rate (update rate) of the LED.
 
 // How many LEDs are in each coloumn and row.
-constexpr size_t ROWS = 5;
+constexpr size_t ROWS = 10;
 constexpr size_t COLS = 77;
 
 // How bright the LEDs should be, on a scale from 0 to 255.
@@ -85,59 +85,29 @@ void setup()
   FastLED.addLeds<LED_TYPE, 21>(leds[2], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 20>(leds[3], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 10>(leds[4], COLS).setCorrection(TypicalLEDStrip);
+ FastLED.addLeds<LED_TYPE, 9>(leds[5], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 6>(leds[6], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 5>(leds[7], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 4>(leds[8], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 3>(leds[9], COLS).setCorrection(TypicalLEDStrip);
 
-  FastLED.addLeds<LED_TYPE, 9>(bottom, COLS).setCorrection(TypicalLEDStrip);
 
   FastLED.setBrightness(BRIGHTNESS);
 }
+
+const String print = "SOFIA SZIKMAN";
 
 void loop()
 {
   for (int i = 80; i > 6; i--)
   {
     fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("APPLAUSE!!!", CRGB::Green, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
-
-
-  delay(4000);
-
-  for (int i = 6; i > -80; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("APPLAUSE!!!", CRGB::Green, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
-
-  for (int i = 80; i > 0; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("GALESI BOARD", CRGB::Red, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
-    delay(50);
-    FastLED.show();
-  }
-
-  delay(4000);
-
-  for (int i = 0; i > -80; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    writeText("GALESI BOARD", CRGB::Red, i, 0, leds);
-
-    fill_rainbow(&(bottom[0]), COLS /*led count*/, i * 10 /*starting hue*/);
-
+    if (print.length()<13){  
+      writeText(print.c_str(), CRGB::Green, i, 0, leds);}
+    else{
+      writeText(print.substring(0,print.indexOf(" ")+1).c_str(), CRGB::Green, i, 6, leds);
+      writeText(print.substring(print.indexOf(" ")+1).c_str(), CRGB:: Green, i, 0, leds);
+    }
     delay(50);
     FastLED.show();
   }
