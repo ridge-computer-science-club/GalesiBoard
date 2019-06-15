@@ -39,12 +39,9 @@
         grid-column: 1/5;
         grid-row:4/5;
     }
-    button.loadMore {
-        left: 10%;
-        padding: 0.7em 2em;
-    }
-    img.pictures{
-        height: 20em;
+    .loadMore {
+        left: 2%;
+        padding: 0.7em 1em;
     }
 }
     .featureHeader {
