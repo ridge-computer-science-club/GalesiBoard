@@ -1,9 +1,11 @@
 @media only screen and (max-width:420px){
     h1.Galesiboard{
         font-size: 3em;
+        margin-left: 1.5em;
     }
     div.descriptionBox{
         width: 15em;
+        padding: 1em;
     }
     div.mdc-text-field{
         left: 10%;
