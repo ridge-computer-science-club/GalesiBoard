@@ -42,8 +42,7 @@
         grid-row:4/5;
     }
     button.loadMore {
-        left: 10%;
-        padding: 0.7em 2em;
+        left: -10em;
     }
     img.pictures{
         height: 20em;

@@ -60,11 +60,10 @@
     </script>
     <p></p>
     <div class="mdc-text-field">
-        <input class="mdc-text-field__input" type="text" placeholder="Input text here">
+        <input class="mdc-text-field__input" type="text" id="textIn">
         <div class="mdc-line-ripple"></div>
         <div class="mdc-text-field-shape-radius(300)"></div>
-        <div class="mdc-text-field-fill-color(&#39;pink&#39;)"></div>
-        <label class="mdc-floating-label">Input text here</label>
+        <label class="mdc-floating-label" for="textIn">Input text here</label>
     </div>
     <button class="button" id="button" onclick="changeText()">Submit</button>
     <br><br>
@@ -101,6 +100,7 @@
     </script>
     <br><br>
     <button class="loadMore" id="button">Load More Features</button>
+    <br><br>
 <!-- Code injected by live-server -->
 <script type="text/javascript">
 	// <![CDATA[  <-- For SVG support
@@ -139,5 +139,9 @@
 	}
 	// ]]>
 </script>
+
+<script>
+    mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
+  </script>
 
 </body></html>
