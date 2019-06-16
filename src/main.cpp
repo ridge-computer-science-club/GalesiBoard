@@ -41,16 +41,7 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
 {
   for (int textIndex = 0; textIndex < strlen(text); ++textIndex)
   {
-    uint8_t asciiCodeOffset;
-    if (text[textIndex] == ' '){
-      asciiCodeOffset = 26;
-    }
-    else if (text[textIndex] == '!')
-    {
-      asciiCodeOffset = 27;
-    } else {
-      asciiCodeOffset = text[textIndex] - STARTING_CHAR;
-    }
+    const uint8_t asciiCodeOffset = text[textIndex] - STARTING_CHAR;
 
     for (int characterRow = 0; characterRow < CHARACTER_SIZE; ++characterRow)
     {
@@ -71,7 +62,7 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
         if (ledCol < 0)
           break;
         // 
-        const bool isPixel = (characters[asciiCodeOffset][characterRow] >> bit) & 0x1;
+        const bool isPixel = (characters[asciiCodeOffset][characterRow] << bit) & 0b10000000;
         ledArray[ledRow][ledCol] = isPixel? colour : CRGB::Black;
       }
     }
@@ -85,20 +76,14 @@ void setup()
   FastLED.addLeds<LED_TYPE, 21>(leds[2], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 20>(leds[3], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 10>(leds[4], COLS).setCorrection(TypicalLEDStrip);
- FastLED.addLeds<LED_TYPE, 9>(leds[5], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 6>(leds[6], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 5>(leds[7], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 4>(leds[8], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 3>(leds[9], COLS).setCorrection(TypicalLEDStrip);
 
 
   FastLED.setBrightness(BRIGHTNESS);
 }
 
-const String print = "SOFIA SZIKMAN";
-
 void loop()
 {
+  /* 
   for (int i = 80; i > 6; i--)
   {
     fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
@@ -111,4 +96,8 @@ void loop()
     delay(50);
     FastLED.show();
   }
+  */
+
+ writeText("!", CRGB::Red, 0, 0, leds);
+ delay(1000);
 }
