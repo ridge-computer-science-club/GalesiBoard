@@ -84,19 +84,6 @@
         z-index: -1;
     }
 
-    .inputWrapper
-    {
-        background-color: white;
-        padding-top: 0.2em;
-        padding-left: 0.3em;
-        padding-right: 0.3em;
-        padding-bottom: 0.2em;
-        border-radius: 1em;
-        margin-left: 6em;
-        margin-right: 6em;
-        margin-bottom: 0.5em;
-    }
-
     .featureHeader {
         font-size: 4em;
         color: #5bc0eb;
@@ -170,6 +157,22 @@
 
     }
 
+    ::-webkit-input-placeholder {
+        color:white !important;
+    }
+    
+    ::-moz-placeholder {
+        color:white !important;
+    }
+    
+    ::-ms-placeholder {
+        color:white !important;
+    }
+    
+    ::placeholder {
+        color:white !important;
+    }
+
     .descriptionBox:hover {
         background-color: #9ac53dad;
     }
@@ -221,11 +224,6 @@
 
     }
 
-    .mdc-text-field {
-        position: relative;
-        top: 90%;
-        left: 40%;
-    }
 
     .loadMore {
         background-color: #5bc0eb;
