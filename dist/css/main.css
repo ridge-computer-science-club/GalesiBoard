@@ -159,18 +159,25 @@
 
     ::-webkit-input-placeholder {
         color:white !important;
+        font-size: 1.5em;
     }
     
     ::-moz-placeholder {
         color:white !important;
+        font-size: 1.5em;
+
     }
     
     ::-ms-placeholder {
         color:white !important;
+        font-size: 1.5em;
+
     }
     
     ::placeholder {
         color:white !important;
+        font-size: 1.5em;
+
     }
 
     .descriptionBox:hover {
