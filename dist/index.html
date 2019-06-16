@@ -2,9 +2,15 @@
 <html lang="en">
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -16,8 +22,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="js/weather.js"></script>
 </head>
 
@@ -60,12 +69,24 @@
         particlesJS.load('particles-js', 'js/particlesjs-config.json');
     </script>
     </p>
-    <div class="mdc-text-field">
-        <input class="mdc-text-field__input" type="text" placeholder="Input text here">
-        <div class="mdc-line-ripple"></div>
-        <div class="mdc-text-field-shape-radius(300)"></div>
-        <div class="mdc-text-field-fill-color('pink')"></div>
-        <label class="mdc-floating-label">Input text here</label>
+    <div class="text-field-container inputWrapper">
+        <div class="mdc-text-field text-field mdc-text-field--outlined mdc-text-field--with-leading-icon"><i
+                class="material-icons mdc-text-field__icon">event</i><input type="text" id="text-field-outlined-leading"
+                class="mdc-text-field__input">
+            <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch" >
+                    <label class="mdc-floating-label"
+                        for="text-field-outlined-leading" style="font-family: monospace; color:black;">Type text here...
+                    </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+            </div>
+        </div>
+        <div class="mdc-text-field-helper-line">
+            <p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
+                id="pw-validation-msg" style="font-family: monospace; color:black;">Press submit to watch the text appear on GalesiBoard</p>
+        </div>
     </div>
     <button class="button" id="button">Submit</button>
     <br></br>
@@ -75,9 +96,9 @@
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="popup featuresBox" style="font-size:2em" onclick="popUp(); everything()">1. Weather, Date, and Time
-                <span class="popuptext" id="myPopup"
-                style="width:38em">
+            <div class="popup featuresBox" style="font-size:2em" onclick="popUp(); everything()">1. Weather, Date, and
+                Time
+                <span class="popuptext" id="myPopup" style="width:38em">
                     <p id="text"></p>
                     <p id="datetime"></p>
                     <div id="temp"></div>
@@ -96,10 +117,10 @@
         </div>
     </p>
     <script>
-    function popUp() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
+        function popUp() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
     </script>
     <br></br>
     <button class="loadMore" id="button">Load More Features</button>

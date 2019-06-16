@@ -84,6 +84,19 @@
         z-index: -1;
     }
 
+    .inputWrapper
+    {
+        background-color: white;
+        padding-top: 0.2em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        padding-bottom: 0.2em;
+        border-radius: 1em;
+        margin-left: 6em;
+        margin-right: 6em;
+        margin-bottom: 0.5em;
+    }
+
     .featureHeader {
         font-size: 4em;
         color: #5bc0eb;
@@ -202,7 +215,6 @@
         padding-bottom: 0.1em;
         border-radius: 1em;
         vertical-align: middle;
-        /*height: 150px;*/
         margin-left: 2em;
         margin-right: 2em;
         margin-bottom: 0.5em;
@@ -256,7 +268,6 @@
 
     .wrapper {
         display: grid;
-        /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
         grid-row-gap: 0em;
         grid-auto-rows: minmax(100px, auto);
         grid-template-areas:
@@ -267,8 +278,6 @@
 
     .w3-content {
         grid-area: pictures;
-        /*grid-column: 4/5;
-  grid-row: 1/4;*/
     }
 
     /* Popup container  */
