@@ -9,7 +9,7 @@ function postInput() {
     //Need to change Url to GalesiBoard. It is currently just a website that tests post requests.
     const Url = 'http://localhost:8080/post/';
     const dada = {
-        input: document.getElementById("textIn").value
+        input: document.getElementById("text-field-fullwidth-helper").value
     }
 
     test = fetch(Url, {
