@@ -11,6 +11,6 @@ toggleBtn.addEventListener("click", function() {
     }
 });
 
-resetBtn.addEventListener("clicK", function () {
+resetBtn.addEventListener("click", function () {
     watch.reset();
 })
