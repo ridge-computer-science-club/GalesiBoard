@@ -74,7 +74,7 @@ function post() {
     }); */
 }
 
-function everything() {
+function postWeatherDateTime() {
     dateTime();
     weather();
 }
