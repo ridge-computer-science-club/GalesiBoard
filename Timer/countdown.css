@@ -1,0 +1,11 @@
+#stopWatch{
+    font-family: "Monaco";
+    font-size: 130px;
+    font-weight: lighter;
+    color: rgba(0, 0, 71, 0.5);
+}
+body {
+    text-align: center;
+    margin-top: 300px;
+    background-color:#d628a2;
+ }
