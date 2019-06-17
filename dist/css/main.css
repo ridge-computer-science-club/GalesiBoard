@@ -175,7 +175,7 @@
         background-color: #5bc0eb;
         border: none;
         color: white;
-        padding: 0.7em 2.5em;
+        padding: .5em 3em;
         text-align: right;
         text-decoration: none;
         display: inline-block;
@@ -184,7 +184,7 @@
         vertical-align: middle;
         position: relative;
         top: 60%;
-        left: 41%;
+        left:50%;
         font-family: monospace;
     }
 
@@ -344,4 +344,9 @@
         font-size: 6em;
         font-family: monospace;
         color:white;
+    }
+
+    .popup-button {
+        position: static; 
+        transform: scale(0.7)
     }

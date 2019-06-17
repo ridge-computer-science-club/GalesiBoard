@@ -101,15 +101,18 @@
                     <div id="wind"></div>
                     <div id="rain"></div>
                     <p id="location"></p>
-                    <button class="button" style="position: static; transform: scale(0.7)" onclick="post()">Post this to GalesiBoard</button>
+                    <button class="button popup-button"  onclick="post()">Post this to GalesiBoard</button>
                 </span>
             </div> 
             <!-- The timerPopup() and stopwatchPopup() functions are in the weather.js file -->
             <div class="popup featuresBox"  onclick="timerPopup()">Timer
                 <span class="popuptext" id="timerPopup">
                     <h1 class="timer">00 : 00 . 000</h1>
-                    <button class="button" id="toggle" style="left: 0%;">Start</button>
-                    <button class="button" id="reset" style="left: 0%;">Reset</button>
+                    <button class="button popup-button" id="toggle" style="left: 0%;">Start</button>
+                    <button class="button popup-button" id="reset" style="left: 0%; margin-bottom: .1em;">Reset</button>
+                    <br>
+                    <button class="button popup-button"  onclick="post()">Post this to GalesiBoard</button>
+
                 </span>
             </div>
             <div class="popup featuresBox" onclick="stopwatchPopup()">Stop Watch
