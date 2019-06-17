@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import arduino.*;
@@ -28,16 +29,25 @@ public class PostServlet extends HttpServlet
 		Arduino arduino = (Arduino) ctx.getAttribute("arduino");
 
 		// not a good way to get data, should use keys and stuff.
-		String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-		data = data.toUpperCase();
+		//String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 
-		// Write your code here that uses data.
+		Map<String, String[]> dataMap = request.getParameterMap();
 
-		System.out.println(data);
+		String[] test = request.getParameterValues("input");
 
-		arduino.openConnection();
-		arduino.serialWrite(STX + data + ETX);
-		arduino.closeConnection();
+		String[] input = dataMap.get("input");
+		if (input != null)
+		{
+			String data = input[0].toUpperCase();
+
+			System.out.println(data);
+
+			arduino.openConnection();
+			arduino.serialWrite(STX + data + ETX);
+			arduino.closeConnection();
+		}
+
+
 
 		response.setContentType("text/plain");
 		response.setStatus(HttpStatus.OK_200);
