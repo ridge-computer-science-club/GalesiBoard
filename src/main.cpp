@@ -16,7 +16,7 @@ This is the program to control GalesiBoard. It currently displays animated text 
 // These are constants that we define for our program, such as what type of LEDs we are using, how bright we want the LED to be, and the refresh rate (update rate) of the LED.
 
 // How many LEDs are in each coloumn and row.
-constexpr size_t ROWS = 10;
+constexpr size_t ROWS = 5;
 constexpr size_t COLS = 77;
 
 // How bright the LEDs should be, on a scale from 0 to 255.
@@ -55,13 +55,13 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
         if (ledRow < 0)
           continue;
 
-        const size_t ledCol = (CHARACTER_SIZE - (bit + 1)) + ((CHARACTER_SIZE + 1) * textIndex) + x;
+        const size_t ledCol = (bit) + ((CHARACTER_SIZE + 1) * textIndex) + x;
         // Check if text overflows array, break to prevent writing out of bounds.
         if (ledCol > (COLS - 1))
           continue;
         if (ledCol < 0)
           break;
-        // 
+        //
         const bool isPixel = (characters[asciiCodeOffset][characterRow] << bit) & 0b10000000;
         ledArray[ledRow][ledCol] = isPixel? colour : CRGB::Black;
       }
@@ -71,14 +71,18 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
 
 void setup()
 {
-  FastLED.addLeds<LED_TYPE, 23>(leds[0], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 22>(leds[1], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 21>(leds[2], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 20>(leds[3], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 10>(leds[4], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 13>(leds[0], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 12>(leds[1], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 14>(leds[2], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 27>(leds[3], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 26>(leds[4], COLS).setCorrection(TypicalLEDStrip);
 
 
   FastLED.setBrightness(BRIGHTNESS);
+
+  Serial.begin(9600);
+  delay(3000);
+  Serial.println("starting");
 }
 
 void loop()
@@ -97,7 +101,11 @@ void loop()
     FastLED.show();
   }
   */
+  fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
+  FastLED.show();
 
- writeText("!", CRGB::Red, 0, 0, leds);
- delay(1000);
+  writeText("HI", CRGB::Red, 0, 0, leds);
+  FastLED.show();
+
+  delay(3000);
 }
