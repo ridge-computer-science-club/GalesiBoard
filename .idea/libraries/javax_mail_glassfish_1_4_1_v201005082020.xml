@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javax.mail.glassfish-1.4.1.v201005082020">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/lib/mail/javax.mail.glassfish-1.4.1.v201005082020.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

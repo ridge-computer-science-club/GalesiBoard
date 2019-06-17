@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jetty-setuid-java-1.0.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/lib/setuid/jetty-setuid-java-1.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
