@@ -28,6 +28,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="js/weather.js"></script>
+    
+    <script src="js/input.js"></script>
 </head>
 
 <body>
@@ -87,8 +89,8 @@
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="popup featuresBox" style="font-size:2em" onclick="popUp(); everything()">Weather, Date, and Time
-                <span class="popuptext" id="myPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left:  1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
+            <div class="popup featuresBox" style="font-size:2em" onclick="popUp(); postWeatherDateTime()">Weather, Date, and Time
+                <span class="popuptext" id="myPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
                     <p id="text"></p>
                     <p id="datetime"></p>
                     <div id="temp"></div>
@@ -105,3 +107,9 @@
             <div class="featuresBox">3</div>
             <div class="featuresBox">4</div>
         </div>
+    </p>
+    <br></br>
+    <button class="loadMore" id="button">Load More Features</button>
+</body>
+
+</html>
