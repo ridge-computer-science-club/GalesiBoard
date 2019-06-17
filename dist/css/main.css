@@ -1,7 +1,6 @@
 @media only screen and (max-width:420px){
     h1.Galesiboard{
-        font-size: 3em;
-        margin-left: 1.5em;
+        margin: auto;
     }
     div.descriptionBox{
         width: 15em;
@@ -12,8 +11,8 @@
     }
     h1.featureHeader{
         margin-left: 1em;
-        margin-right: em;
-    }
+        margin-right: 1em;
+        
     .allFeatures{
         display: grid;
         grid-row-gap: 0.5em;
@@ -41,7 +40,7 @@
         left: -10em;
     }
     img.pictures{
-        height: 20em;
+        margin: auto;
     }
 }
     .featureHeader {
@@ -119,7 +118,7 @@
     }
 
     .allFeatures>div {
-        background-color: #e55934;
+        background-color: #5bc0eb;
     }
 
     .allFeatures>div:nth-child(odd) {
@@ -127,7 +126,7 @@
     }
 
     .allFeatures>div:hover {
-        background-color: #df876e;
+        background-color: #69c1e7;
     }
 
     .allFeatures>div:nth-child(odd):hover {
