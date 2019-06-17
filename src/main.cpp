@@ -35,6 +35,48 @@ void setup()
   Serial.println("starting");
 }
 
+// Serial handling from https://forum.arduino.cc/index.php?topic=396450
+#define TEXT_BUFFER_LENGTH 64
+char textBuffer[TEXT_BUFFER_LENGTH];
+
+boolean newData = false;
+
+void recieveData()
+{
+  static boolean incomingData = false;
+  static uint8_t index = 0;
+  char receivedCharacter;
+
+  while (Serial.available() > 0 && newData == false)
+  {
+    receivedCharacter = Serial.read();
+
+    if (incomingData)
+    {
+      if (receivedCharacter != END_TEXT)
+      {
+        textBuffer[index] = receivedCharacter;
+        index++;
+        if (index >= TEXT_BUFFER_LENGTH)
+        {
+          index = TEXT_BUFFER_LENGTH - 1;
+        }
+      }
+      else
+      {
+        textBuffer[index] = '\0'; // terminate the string
+        incomingData = false;
+        index = 0;
+        newData = true;
+      }
+    }
+    else if (receivedCharacter == START_TEXT)
+    {
+      incomingData = true;
+    }
+  }
+}
+
 void loop()
 {
   /* 
@@ -51,11 +93,19 @@ void loop()
     FastLED.show();
   }
   */
-  fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-  FastLED.show();
+  recieveData();
+ 
+  if (newData)
+  {
 
-  writeText("T", CRGB::Red, 0, 0, leds);
-  FastLED.show();
+    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
 
-  delay(3000);
+    Serial.print("Received: ");
+    Serial.println(textBuffer);
+    writeText(textBuffer, CRGB::Cyan, 0, 0, leds);
+    newData = false;
+    FastLED.show();
+  }
+
+  delay(10);
 }
