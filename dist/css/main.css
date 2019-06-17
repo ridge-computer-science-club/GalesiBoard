@@ -275,6 +275,7 @@
         position: relative;
         display: inline-block;
         cursor: pointer;
+        border-radius: 0.75em;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -285,16 +286,16 @@
     .popup .popuptext {
         visibility: hidden;
         width: 500px;
-        background-color: #555;
+        background-color: rgb(250,131,33);
         color: #fff;
         text-align: center;
-        border-radius: 6px;
+        border-radius: 0.75em;
         padding: 8px 0;
         position: absolute;
         z-index: 1;
         bottom: 125%;
         left: 50%;
-        margin-left: -80px;
+        margin-left: -3em;
     }
 
 

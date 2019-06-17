@@ -28,8 +28,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="js/weather.js"></script>
+    
     <script src="js/input.js"></script>
-
 </head>
 
 <body>
@@ -44,7 +44,8 @@
             <img class="pictures" src="/images/EditGalesi7.jpg">
         </figure>
         <div class="descriptionBox">
-            Welcome to GalesiBoard! This is an interactive LED signboard made at the bequest of Lord Galesi, inhabitant of Room 701. 
+            Welcome to GalesiBoard! This is an interactive LED signboard made at the bequest of Lord Galesi, inhabitant
+            of Room 701.
             Interact with this website to see changes magically materialize on the board!
         </div>
     </div>
@@ -72,9 +73,10 @@
     </p>
     <div class="descriptionBox text-field-container" style="background-color: rgb(250,131,33);">
         <div class="mdc-text-field text-field mdc-text-field--fullwidth mdc-text-field--no-label mdc-ripple-upgraded">
-            <input type="text" id="text-field-fullwidth-helper" placeholder="Type your message for GalesiBoard here..." class="mdc-text-field__input" style="font-family: monospace; font-size: 1em;">
+            <input type="text" id="text-field-fullwidth-helper" placeholder="Type your message for GalesiBoard here..."
+                class="mdc-text-field__input" style="font-family: monospace;">
         </div>
-        
+
     </div>
     </div>
     </div>
@@ -100,7 +102,7 @@
                     <div id="wind"></div>
                     <div id="rain"></div>
                     <p id="location"></p>
-                    <button onclick="post()">Post this to GalesiBoard</button>
+                    <button class="button" style="position: static; transform: scale(0.7)" onclick="post()">Post this to GalesiBoard</button>
                 </span>
             </div>
             <div class="featuresBox">Timer</div>
@@ -108,13 +110,6 @@
             <div class="featuresBox">Applause</div>
         </div>
     </p>
-    <script>
-        function popUpWeather() {
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
-        }
-    
-    </script>
     <br></br>
     <div style="text-align: center;">
         <button class="loadMore" id="button" style="margin-bottom: 2em;">Load More Features</button>
