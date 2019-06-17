@@ -8,7 +8,7 @@ public class RandomStudent {
     private static DatabaseHandler periodDatabaseHandler;
     private static ArrayList<Period> Periods;
 
-    public ArrayList<String> getPeriodNames() {
+    public static ArrayList<String> getPeriodNames() {
         return Periods
                 .stream()
                 .map(Object::toString).collect(Collectors.toCollection(ArrayList::new));
@@ -23,13 +23,23 @@ public class RandomStudent {
                 .map(Period::new).collect(Collectors.toCollection(ArrayList::new));
 
         addPeriod("3");
+        addPeriod("Period 5");
 
-        Periods.forEach(System.out::println);
+        Periods.get(0).addStudent("Shrey");
+        Periods.get(1).addStudent("Not");
 
+        Periods.get(0).addStudent("You");
+
+
+        Periods.forEach(period -> period.getStudentNames().forEach(System.out::println));
     }
 
     public static void addPeriod(String periodName) {
-        Periods.add(new Period(periodName));
+        if (!getPeriodNames().contains(periodName))
+        {
+            periodDatabaseHandler.write(periodName);
+            Periods.add(new Period(periodName));
+        }
     }
 
 }

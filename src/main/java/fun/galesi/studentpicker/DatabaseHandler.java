@@ -8,9 +8,6 @@ public class DatabaseHandler {
     private static final String DATA_LOCATION = "./PeriodData/";
 
     private final File file;
-    private FileReader reader;
-    private BufferedReader bufferedReader;
-    private PrintWriter write;
 
     public DatabaseHandler(String fileName) {
         this.file = new File(DATA_LOCATION, fileName + ".txt");
@@ -19,10 +16,6 @@ public class DatabaseHandler {
             // Create the containing directories and file if it does not exist.
             file.getParentFile().mkdirs();
             file.createNewFile();
-            
-            write = new PrintWriter(new FileWriter(file, true));
-            reader = new FileReader(file);
-            bufferedReader = new BufferedReader(reader);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -32,12 +25,11 @@ public class DatabaseHandler {
         ArrayList<String> toReturn = new ArrayList<>();
         String line = null;
 
-        try {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.print(line + "\n");
+                System.out.print("Read line: " + line + "\n");
                 toReturn.add(line);
             }
-            bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,13 +41,12 @@ public class DatabaseHandler {
     public String read() {
         StringBuilder returnString = new StringBuilder();
         String line = null;
-        try {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
 
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.print(line + "\n");
+                System.out.print("Read line: " + line + "\n");
                 returnString.append(line).append("\n");
             }
-            bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,8 +54,11 @@ public class DatabaseHandler {
     }
 
     public void write(String toWrite) {
-        write.write(toWrite);
-        write.close();
+        try (PrintWriter writer = new PrintWriter(new FileWriter(file, true))) {
+            writer.println(toWrite);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void clear() {
@@ -74,4 +68,5 @@ public class DatabaseHandler {
             e.printStackTrace();
         }
     }
+
 }

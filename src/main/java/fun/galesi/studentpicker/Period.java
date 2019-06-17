@@ -23,4 +23,11 @@ public class Period {
     public ArrayList<String> getStudentNames() {
         return studentNames;
     }
+
+    public void addStudent (String studentName)
+    {
+        databaseHandler.write(studentName);
+        studentNames.add(studentName);
+    }
+
 }
