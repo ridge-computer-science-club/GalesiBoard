@@ -1,19 +1,38 @@
 @media only screen and (max-width:420px){
+    div.wrapper{
+        width: 100%;
+        height: 100%;
+    }
     h1.Galesiboard{
-        font-size: 3em;
-        margin-left: 1.5em;
+        margin: 0 auto;
+        font-size: 250%;
     }
+    figure.w3-content{
+        width: 70%;
+        margin: 0 auto;
+    }
+    
     div.descriptionBox{
-        width: 15em;
-        padding: 1em;
+        width: 70%;
+        margin: 0 auto;
     }
-    div.mdc-text-field{
-        left: 10%;
+    button.loadMore{
+        margin: 0 auto;
     }
+
     h1.featureHeader{
-        margin-left: 1em;
-        margin-right: em;
+        margin: 0 auto;
     }
+    img.pictures{
+        width: 100%;
+        height: 22em;
+        margin: auto auto auto auto;
+    }
+    div.descriptionBox.text-field-container{
+        margin: 0 auto;
+    }
+}
+        
     .allFeatures{
         display: grid;
         grid-row-gap: 0.5em;
@@ -41,9 +60,8 @@
         left: -10em;
     }
     img.pictures{
-        height: 20em;
+        margin: auto;
     }
-}
     .featureHeader {
         grid-area: featureHeader;
     }
@@ -119,7 +137,7 @@
     }
 
     .allFeatures>div {
-        background-color: #e55934;
+        background-color: #5bc0eb;
     }
 
     .allFeatures>div:nth-child(odd) {
@@ -127,7 +145,7 @@
     }
 
     .allFeatures>div:hover {
-        background-color: #df876e;
+        background-color: #69c1e7;
     }
 
     .allFeatures>div:nth-child(odd):hover {
@@ -255,6 +273,7 @@
         animation: slide 20s infinite;
         display: grid;
         height: 25em;
+        margin: auto;
     }
 
     .wrapper {
@@ -262,9 +281,9 @@
         grid-row-gap: 0em;
         grid-auto-rows: minmax(100px, auto);
         grid-template-areas:
-            'title title'
-            'pictures pictures'
-            'description description';
+            'title'
+            'pictures'
+            'description';
     }
 
     .w3-content {
@@ -286,15 +305,13 @@
     /* The actual popup */
     .popup .popuptext {
         visibility: hidden;
-        position: fixed;
-        top: 1em;
-        border: 0.167em solid #5bc0eb;
 
         background-color: rgb(250,131,33);
         color: #fff;
 
         text-align: center;
         border-radius: 0.75em;
+        position: absolute;
         z-index: 1;
 
         padding-top: 0.2em;

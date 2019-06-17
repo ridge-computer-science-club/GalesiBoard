@@ -21,7 +21,7 @@ public class GUI
 	private static JPanel mainPanel;
 	private static JLabel name;
 
-	public GUI()
+	public static void main(String[] args)
 	{
 
 		RandomStudent randomStudent = new RandomStudent();

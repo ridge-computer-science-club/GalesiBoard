@@ -58,8 +58,9 @@ function weather() {
 }
 
 function post() {
-    const Url = 'http://localhost:8080/post/';
-    const dada = {
+    const loc = window.location;
+    const Url = loc.protocol + '//' + loc.hostname + ':' + loc.port + '/post/';
+    const weatherData = {
         temp: document.getElementById("temp").innerHTML,
         minutely: document.getElementById("minutely").innerHTML,
         death: document.getElementById("death").innerHTML,
@@ -75,7 +76,7 @@ function post() {
             'Accept': 'text/plain',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(dada)
+        body: JSON.stringify(weatherData)
     }).then((result) => {
         console.log(result);
         return result.text();
