@@ -10,13 +10,9 @@
     div.mdc-text-field{
         left: 10%;
     }
-    button.button{
-        left: 10%;
-        padding: 0.7em 1.8em;
-    }
     h1.featureHeader{
-        margin-left: 1.2em;
-        margin-right: 0.8em;
+        margin-left: 1em;
+        margin-right: em;
     }
     .allFeatures{
         display: grid;
@@ -115,7 +111,7 @@
 
     .featuresBox {
         padding: 1em;
-        font-size: 3em;
+        font-size: 1.5em;
         text-align: center;
         border-radius: 1em;
         align-self: center;
@@ -123,7 +119,7 @@
     }
 
     .allFeatures>div {
-        background-color: #5BC0EB;
+        background-color: #e55934;
     }
 
     .allFeatures>div:nth-child(odd) {
@@ -131,7 +127,7 @@
     }
 
     .allFeatures>div:hover {
-        background-color: rgb(141, 209, 238);
+        background-color: #df876e;
     }
 
     .allFeatures>div:nth-child(odd):hover {
@@ -227,16 +223,14 @@
         background-color: #5bc0eb;
         border: none;
         color: white;
-        padding: 0.7em 2.5em;
-        text-align: right;
+        padding: 0.7em 0.7em;
+        text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 1.5em;
         border-radius: 0.75em;
         vertical-align: middle;
-        position: relative;
-        top: 60%;
-        left: 41%;
+        
         font-family: monospace;
     }
 
@@ -244,7 +238,7 @@
         background-color: white;
         color: #5bc0eb;
         border: 0.167em solid #5bc0eb;
-        padding: 0.5em 2.3em;
+        padding: 0.5em 0.5 em;
         box-shadow: 0 0.75em 1em 0 rgba(0, 0, 0, 0.24), 0 1.063em 4.167em 0 rgba(0, 0, 0, 0.19);
     }
 

@@ -74,16 +74,17 @@
     <div class="descriptionBox text-field-container" style="background-color: rgb(250,131,33);">
         <div class="mdc-text-field text-field mdc-text-field--fullwidth mdc-text-field--no-label mdc-ripple-upgraded">
             <input type="text" id="text-field-fullwidth-helper" placeholder="Type your message for GalesiBoard here..."
-                class="mdc-text-field__input" style="font-family: monospace;">
+                class="mdc-text-field__input" style="font-family: monospace; font-size: 1em;">
         </div>
 
     </div>
     </div>
     </div>
     <br>
-    <button class="button" id="button">Submit</button>
-    <br></br>
-    <br><br>
+    <div style="text-align: center;">
+        <button class="loadMore" onclick="postInput()">Post to GalesiBoard!</button>
+    </div>
+    <br>
     <h1 class="featureHeader">
         Features
     </h1>
@@ -104,17 +105,20 @@
                 </span>
             </div>
             <!-- The emptyPopup() function is in the weather.js file -->
-            <div class="popup featuresBox" style="font-size:2em" onclick="emptyPopup()">Empty button
+            <div class="popup featuresBox" style="font-size:2em" onclick="emptyPopup()">Timer
                 <span class="popuptext" id="2Popup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
                     <p>Empty Filler Text</p>
                 </span>
             </div>
-            <div class="featuresBox">3</div>
-            <div class="featuresBox">4</div>
+            <div class="featuresBox">Stop Watch</div>
+            <div class="featuresBox">Applause</div>
         </div>
     </p>
     <br></br>
-    <button class="loadMore" id="button">Load More Features</button>
+    <div style="text-align: center;">
+        <button class="loadMore" id="button" style="margin-bottom: 2em;">Load More Features</button>
+    </div>
+    
 </body>
 
 </html>
