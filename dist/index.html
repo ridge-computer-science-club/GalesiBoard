@@ -90,7 +90,7 @@
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="popup featuresBox" style="font-size:2em" onclick="weatherPopUp(); postWeatherDateTime()">Weather, Date, and Time
+            <div class="popup featuresBox" onclick="weatherPopUp(); postWeatherDateTime()">Weather, Date, and Time
                 <span class="popuptext" id="weatherPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
                     <p id="datetimeintro"></p>
                     <p id="datetime"></p>
@@ -103,14 +103,14 @@
                     <p id="location"></p>
                     <button class="button" style="position: static; transform: scale(0.7)" onclick="post()">Post this to GalesiBoard</button>
                 </span>
-            </div>
+            </div> 
             <!-- The timerPopup() and stopwatchPopup() functions are in the weather.js file -->
-            <div class="popup featuresBox" style="font-size:2em" onclick="timerPopup()">Timer
+            <div class="popup featuresBox"  onclick="timerPopup()">Timer
                 <span class="popuptext" id="timerPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
                     <iframe src="..\Timer\timer.html" width="70%" height="80%"></iframe>
                 </span>
             </div>
-            <div class="popup featuresBox" style="font-size:2em" onclick="stopwatchPopup()">Stop Watch
+            <div class="popup featuresBox" onclick="stopwatchPopup()">Stop Watch
                 <span class="popuptext" id="stopwatchPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
                     <iframe src="..\Timer\countdown.html" width="70%" height="80%"></iframe>
                 </span>
