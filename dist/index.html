@@ -30,6 +30,7 @@
     <script src="js/weather.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/input.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 
 <body>
@@ -92,7 +93,7 @@
         <div class="allFeatures">
             <div class="popup featuresBox" onclick="weatherPopUp(); postWeatherDateTime()">Weather, Date, and Time
                 <span class="popuptext" id="weatherPopup">
-                    <button style = "background-color: red; color: white; width: 2em; float: right">X</button>
+                    <i class=" exit fas fa-window-close fa-2x" ></i>
                     <p id="datetimeintro"></p>
                     <p id="datetime"></p>
                     <div id="temp"></div>

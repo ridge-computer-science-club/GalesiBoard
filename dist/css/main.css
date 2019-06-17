@@ -271,6 +271,12 @@
         grid-area: pictures;
     }
 
+    .exit {
+        float:right; 
+        margin-right: 0.5em; 
+        margin-top: 0.25em;
+    }
+
     /* Popup container  */
     .popup {
        /* position: relative;
