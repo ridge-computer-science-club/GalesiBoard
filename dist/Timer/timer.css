@@ -4,9 +4,8 @@ body {
     background-color:  rgb(250,131,33);
 }
 
-#timer{
-    font-family: "Monaco";
-    font-size: 100px;
+.timer{
+    font-family: consolas;
     font-weight: lighter;
     color: rgba(255, 255, 255, 0.61);
 }

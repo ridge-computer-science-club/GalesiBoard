@@ -305,12 +305,10 @@
         vertical-align: middle;
         display: inline-block;
 
-
-        margin-left: 6em;
-        margin-right: 6em;
         margin-bottom: 0.5em;
-        /*left: 50%;
-        margin-left: -3em;*/
+        left: 10%;
+        right: 10%;
+        margin-left: 0em;
     }
 
 
@@ -340,4 +338,10 @@
         to {
             opacity: 1;
         }
+    }
+    
+    .timer{
+        font-size: 6em;
+        font-family: monospace;
+        color:white;
     }
