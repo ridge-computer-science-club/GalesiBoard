@@ -89,9 +89,9 @@
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="popup featuresBox" style="font-size:2em" onclick="popUp(); postWeatherDateTime()">Weather, Date, and Time
-                <span class="popuptext" id="myPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
-                    <p id="text"></p>
+            <div class="popup featuresBox" style="font-size:2em" onclick="weatherPopUp(); postWeatherDateTime()">Weather, Date, and Time
+                <span class="popuptext" id="weatherPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
+                    <p id="datetimeintro"></p>
                     <p id="datetime"></p>
                     <div id="temp"></div>
                     <div id="minutely"></div>
@@ -103,7 +103,12 @@
                     <button class="button" style="position: static; transform: scale(0.7)" onclick="post()">Post this to GalesiBoard</button>
                 </span>
             </div>
-            <div class="featuresBox">2</div>
+            <!-- The emptyPopup() function is in the weather.js file -->
+            <div class="popup featuresBox" style="font-size:2em" onclick="emptyPopup()">Empty button
+                <span class="popuptext" id="2Popup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
+                    <p>Empty Filler Text</p>
+                </span>
+            </div>
             <div class="featuresBox">3</div>
             <div class="featuresBox">4</div>
         </div>
