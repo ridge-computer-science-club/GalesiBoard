@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="./GalesiBoard_files/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./GalesiBoard_files/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./GalesiBoard_files/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./GalesiBoard_files/particles.min.js"></script>
+    <script src="./GalesiBoard_files/jquery.min.js"></script>
+    
+    <meta name="viewport" content="initial-scale=1">
+    <title>GalesiBoard</title>
+    
+    <script src="./GalesiBoard_files/material-components-web.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <script type="text/javascript" src="java.js"></script>
+    <script src="./GalesiBoard_files/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./GalesiBoard_files/weather.js"></script>
+<link rel="stylesheet" type="text/css" href="./GalesiBoard_files/main.css"><link href="./GalesiBoard_files/material-components-web.min.css" rel="stylesheet"><link rel="stylesheet" href="./GalesiBoard_files/icon"><link rel="stylesheet" href="./GalesiBoard_files/w3.css"><link rel="stylesheet" href="./GalesiBoard_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+
+<body style="">
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="720" height="736" style="width: 100%; height: 100%;"></canvas></div>
+    <div class="wrapper">
+        <h1 class="Galesiboard">GALESIBOARD</h1>
+        <figure class="w3-content">
+            <img class="pictures" src="./GalesiBoard_files/EditGalesi1.jpg.png" style="display: none;">
+            <img class="pictures" src="./GalesiBoard_files/EditGalesi3.jpg" style="display: none;">
+            <img class="pictures" src="./GalesiBoard_files/EditGalesi4.jpg" style="display: none;">
+            <img class="pictures" src="./GalesiBoard_files/EditGalesi2.jpg" style="display: block;">
+            <img class="pictures" src="./GalesiBoard_files/EditGalesi7.jpg" style="display: none;">
+        </figure>
+        <div class="descriptionBox">
+            Welcome to GalesiBoard! You can input your personalized message and watch it magically materialize on this
+            interactive LED board! Not only can you display pictures of your choice, but you can also play exciting and
+            innovative games!
+        </div>
+    </div>
+    <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("pictures");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) { slideIndex = 1 }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+
+
+
+        /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+        particlesJS.load('particles-js', 'js/particlesjs-config.json');
+    </script>
+    <p></p>
+    <div class="mdc-text-field">
+        <input class="mdc-text-field__input" type="text" id="textIn">
+        <div class="mdc-line-ripple"></div>
+        <div class="mdc-text-field-shape-radius(300)"></div>
+        <label class="mdc-floating-label" for="textIn">Input text here</label>
+    </div>
+    <button class="button" id="button" onclick="changeText()">Submit</button>
+    <br><br>
+    <br><br>
+    <h1 class="featureHeader">
+        Features
+    </h1>
+    <p>
+        </p><div class="allFeatures">
+            <div class="popup featuresBox" style="font-size:2em" onclick="popUp(); everything()">Weather, Date, &amp; Time
+                <span class="popuptext" id="myPopup" style="width:37em">
+                    <p id="text"></p>
+                    <p id="datetime"></p>
+                    <div id="temp"></div>
+                    <div id="minutely"></div>
+                    <div id="death"></div>
+                    <div id="seetime"></div>
+                    <div id="wind"></div>
+                    <div id="rain"></div>
+                    <p id="location"></p>
+                    <button onclick="post()">Post this to GalesiBoard</button>
+                </span>
+            </div>
+            <div class="featuresBox">2</div>
+            <div class="featuresBox">3</div>
+            <div class="featuresBox">4</div>
+        </div>
+    <p></p>
+    <script>
+    function popUp() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+    </script>
+    <br><br>
+    <button class="loadMore" id="button">Load More Features</button>
+    <br><br>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<script>
+    mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
+  </script>
+
+</body></html>

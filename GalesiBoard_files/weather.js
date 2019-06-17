@@ -5,10 +5,6 @@ function dateTime() {
         "/" + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
 }
 
-function popUp() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
 
 function weather() {
     var location = document.getElementById("location");
@@ -26,26 +22,27 @@ function weather() {
 
         $.getJSON(
             url + apiKey + "/" + latitude + "," + longitude + "?callback=?",
-            function (data) {
+            function(data) {
                 $("#temp").html(data.currently.temperature + "° F");
                 $("#minutely").html(data.minutely.summary);
                 $("#death").html(data.currently.nearestStormDistance + " miles to the nearest death machine storm thingy");
                 $("#wind").html("The wind speed is " + data.currently.windSpeed + " mph");
                 $("#rain").html(data.currently.precipProbability + " % chance of precipitation");
-                $("#seetime").html("You will be able to see " + data.currently.visibility + " miles around you");
+                $("#seetime").html("You will be able to see " + data.currently.visibility + "miles around you");
             }
         )
     }
 
     function error() {
-        location.innerHTML = "Wow. You guys literally hit this button over a 1000 times in one day. Great job, hope you're all proud of yourselves. I mean this seriously. \n\nEither one of you had to be really commited to pressing this button a bunch of times, or wrote a neat piece of code to do it instead, or you all banded together and bonded over breaking the weather funciton. I can respect that. Kudos \n -Arya, one of the dudes who made this. \nPS Hiiii - ann";
-    }   
+        location.innerHTML = "Unable to retrieve your location";
+    }
 
     location.innerHTML = "Locating...";
 
 }
 
 function post() {
+    //Need to change Url to GalesiBoard. It is currently just a website that tests post requests.
     const Url = 'http://localhost:8080/post/';
     const dada = {
         temp: document.getElementById("temp").innerHTML,
@@ -56,7 +53,7 @@ function post() {
         seetime: document.getElementById("seetime").innerHTML
     }
 
-    test = fetch(Url, {
+   test = fetch(Url, {
         method: 'POST',
         mode: 'same-origin',
         headers: {
@@ -65,19 +62,19 @@ function post() {
         },
         body: JSON.stringify(dada)
     }).then((result) => {
-        console.log(result);
-        return result.text();
-    }).then(data => {
-        console.log(data);
-        return data;
+            console.log(result);
+            return result.text();
+        }).then(data => {
+            console.log(data);
+            return data;
     });
-    /*
-        $.post(Url, dada, function(dada, status) {
-            console.log('${dada} and status is ${status}')
-        }); */
+/*
+    $.post(Url, dada, function(dada, status) {
+        console.log('${dada} and status is ${status}')
+    }); */
 }
 
-function postWeatherDateTime() {
+function everything() {
     dateTime();
     weather();
 }
