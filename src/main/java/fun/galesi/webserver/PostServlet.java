@@ -2,36 +2,55 @@ package fun.galesi.webserver;
 
 import org.eclipse.jetty.http.HttpStatus;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
 import java.util.stream.Collectors;
+
 import arduino.*;
 
-public class PostServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
 
-        // not a good way to get data, should use keys and stuff.
-        String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-
-        // Write your code here that uses data.
-
-        System.out.println(data);
-        Arduino arduino = new Arduino("cu.usbmodem14101", 9600); //Replace with the correct port
-        arduino.openConnection();
-        arduino.serialWrite(data);
-        arduino.closeConnection();
-        //make sure you have the library installed idk how to import it from within the repo oops
+public class PostServlet extends HttpServlet
+{
+	private static final char STX = 0x2;
+	private static final char ETX = 0x3;
 
 
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws IOException
+	{
+
+		ServletContext ctx = request.getServletContext();
+		Arduino arduino = (Arduino) ctx.getAttribute("arduino");
+
+		// not a good way to get data, should use keys and stuff.
+		//String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+
+		Map<String, String[]> dataMap = request.getParameterMap();
+
+		String[] test = request.getParameterValues("input");
+
+		String[] input = dataMap.get("input");
+		if (input != null)
+		{
+			String data = input[0].toUpperCase();
+
+			System.out.println(data);
+
+			arduino.openConnection();
+			arduino.serialWrite(STX + data + ETX);
+			arduino.closeConnection();
+		}
 
 
-        response.setContentType("text/plain");
-        response.setStatus(HttpStatus.OK_200);
-        response.getWriter().println("success"); // TODO: Implement different responses based on what happens on the board (i.e success or failure.)
-    }
+
+		response.setContentType("text/plain");
+		response.setStatus(HttpStatus.OK_200);
+		response.getWriter().println("success"); // TODO: Implement different responses based on what happens on the board (i.e success or failure.)
+	}
 }
