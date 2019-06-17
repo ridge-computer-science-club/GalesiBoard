@@ -90,10 +90,9 @@
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="popup featuresBox"  onclick="popUpWeather(); postWeatherDateTime()">Weather, Date, and
-                Time
-                <span class="popuptext" id="myPopup" style="width:38em">
-                    <p id="text"></p>
+            <div class="popup featuresBox" style="font-size:2em" onclick="weatherPopUp(); postWeatherDateTime()">Weather, Date, and Time
+                <span class="popuptext" id="weatherPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
+                    <p id="datetimeintro"></p>
                     <p id="datetime"></p>
                     <div id="temp"></div>
                     <div id="minutely"></div>
@@ -105,8 +104,17 @@
                     <button class="button" style="position: static; transform: scale(0.7)" onclick="post()">Post this to GalesiBoard</button>
                 </span>
             </div>
-            <div class="featuresBox">Timer</div>
-            <div class="featuresBox">Stop Watch</div>
+            <!-- The timerPopup() and stopwatchPopup() functions are in the weather.js file -->
+            <div class="popup featuresBox" style="font-size:2em" onclick="timerPopup()">Timer
+                <span class="popuptext" id="timerPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
+                    <iframe src="C:\Users\kasia_000\Documents\GitHub\GalesiBoard\Timer\timer.html" width="100%" height="100%"></iframe>
+                </span>
+            </div>
+            <div class="popup featuresBox" style="font-size:2em" onclick="stopwatchPopup()">Stop Watch
+                <span class="popuptext" id="stopwatchPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
+                    <iframe src="C:\Users\kasia_000\Documents\GitHub\GalesiBoard\Timer\countdown.html" width="100%" height="100%"></iframe>
+                </span>
+            </div>
             <div class="featuresBox">Applause</div>
         </div>
     </p>
