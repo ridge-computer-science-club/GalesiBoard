@@ -10,9 +10,15 @@ function weatherPopUp() {
     popup.classList.toggle("show");
 }
 
-function emptyPopup()
+function timerPopup()
 {
-    var popup = document.getElementById("2Popup");
+    var popup = document.getElementById("timerPopup");
+    popup.classList.toggle("show");
+}
+
+function stopwatchPopup()
+{
+    var popup = document.getElementById("stopwatchPopup");
     popup.classList.toggle("show");
 }
 
