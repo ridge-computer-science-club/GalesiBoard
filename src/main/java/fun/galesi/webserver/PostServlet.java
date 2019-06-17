@@ -1,17 +1,18 @@
 package fun.galesi.webserver;
 
+import arduino.Arduino;
 import org.eclipse.jetty.http.HttpStatus;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import arduino.*;
 
 
 public class PostServlet extends HttpServlet
@@ -28,25 +29,41 @@ public class PostServlet extends HttpServlet
 		ServletContext ctx = request.getServletContext();
 		Arduino arduino = (Arduino) ctx.getAttribute("arduino");
 
-		// not a good way to get data, should use keys and stuff.
-		//String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 
-		Map<String, String[]> dataMap = request.getParameterMap();
+		String data = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 
-		String[] test = request.getParameterValues("input");
-
-		String[] input = dataMap.get("input");
-		if (input != null)
+		try
 		{
-			String data = input[0].toUpperCase();
+			JSONObject obj = new JSONObject(data);
+			String input = obj.getString("input");
 
-			System.out.println(data);
+			/*JSONArray arr = obj.getJSONArray("posts");
+			for (int i = 0; i < arr.length(); i++)
+			{
+				String post_id = arr.getJSONObject(i).getString("post_id");
+			}*/
 
-			arduino.openConnection();
-			arduino.serialWrite(STX + data + ETX);
-			arduino.closeConnection();
+			if (input != null)
+			{
+				input = input.toUpperCase();
+
+				System.out.println(input);
+
+				try {
+					arduino.openConnection();
+					arduino.serialWrite(STX + input + ETX);
+					arduino.closeConnection();
+				} catch (NullPointerException e)
+				{
+					System.err.println("Arduino not found on serial port!");
+				}
+
+			}
+
+		} catch (JSONException e)
+		{
+			e.printStackTrace();
 		}
-
 
 
 		response.setContentType("text/plain");

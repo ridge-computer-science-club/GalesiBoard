@@ -20,7 +20,7 @@ public class JettyMain {
         // Create a basic Jetty server object that will listen on port 8080.  Note that if you set this to port 0
         // then a randomly available port will be assigned that you can either look in the logs for the port,
         // or programmatically obtain it for use in test cases.
-        Server server = new Server(8080);
+        Server server = new Server(80);
 
 
         ServletContextHandler servletContextHandler = new ServletContextHandler(server, "/post/");
