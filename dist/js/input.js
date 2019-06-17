@@ -6,9 +6,9 @@ function changeText() {
 }
 
 function postInput() {
-    //Need to change Url to GalesiBoard. It is currently just a website that tests post requests.
-    const Url = 'http://localhost:8080/post/';
-    const dada = {
+    const loc = window.location;
+    const Url = loc.protocol + '//' + loc.hostname + ':' + loc.port + '/post/';
+    const inputData = {
         input: document.getElementById("text-field-fullwidth-helper").value
     };
 
@@ -19,7 +19,7 @@ function postInput() {
             'Accept': 'text/plain',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(dada)
+        body: JSON.stringify(inputData)
     }).then((result) => {
         console.log(result);
         return result.text();
