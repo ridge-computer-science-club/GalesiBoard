@@ -285,13 +285,15 @@
     /* The actual popup */
     .popup .popuptext {
         visibility: hidden;
+        position: fixed;
+        top: 1em;
+        border: 0.167em solid #5bc0eb;
 
         background-color: rgb(250,131,33);
         color: #fff;
 
         text-align: center;
         border-radius: 0.75em;
-        position: absolute;
         z-index: 1;
 
         padding-top: 0.2em;
@@ -300,6 +302,8 @@
         padding-bottom: 0.2em;
 
         vertical-align: middle;
+        display: inline-block;
+
 
         margin-left: 6em;
         margin-right: 6em;
