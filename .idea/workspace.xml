@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e19a901-e607-45c2-b622-15c80664a154" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/GalesiBoard_files/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/GalesiBoard_files/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/Timer/countdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/Timer/countdown.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/Timer/countdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/Timer/countdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/Timer/timer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Extra Crap that really shouldnt be here grr/Timer/timer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeriodData/3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeriodData/Period 5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PeriodData/allClasses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/demo-base/etc/realm.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/demo-base/etc/realm.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/modules/deprecated.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/modules/deprecated.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/fun/galesi/studentpicker/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/fun/galesi/studentpicker/DatabaseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/fun/galesi/studentpicker/Period.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/fun/galesi/studentpicker/Period.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/fun/galesi/studentpicker/RandomStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/fun/galesi/studentpicker/RandomStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/fun/galesi/webserver/JettyMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/fun/galesi/webserver/JettyMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/main/fun/galesi/webserver/PostServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/fun/galesi/webserver/PostServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeriodData/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeriodData/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeriodData/7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeriodData/allClasses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PeriodData/allClasses.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/Period.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/Period.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/RandomStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/RandomStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/JettyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/JettyMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/PostServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/PostServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="193" column="78" selection-start-line="193" selection-start-column="78" selection-end-line="193" selection-end-column="78" />
+            <state relative-caret-position="855">
+              <caret line="240" column="83" selection-start-line="240" selection-start-column="83" selection-end-line="240" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8091#8092#0" expanded="true" />
@@ -77,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/RandomStudent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+            <state relative-caret-position="165">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/Period.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+            <state relative-caret-position="225">
+              <caret line="51" column="45" lean-forward="true" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#341#342#0" expanded="true" />
@@ -98,10 +81,8 @@
                 <element signature="e#790#791#0" expanded="true" />
                 <element signature="e#825#826#0" expanded="true" />
                 <element signature="e#899#900#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#1034#1035#0" expanded="true" />
-                <element signature="e#1101#1102#0" expanded="true" />
-                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
+            <state relative-caret-position="535">
               <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -152,10 +133,10 @@
         <option value="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/PeriodList.java" />
         <option value="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/PostServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/JettyMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/Period.java" />
         <option value="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/RandomStudent.java" />
         <option value="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/GUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/Period.java" />
       </list>
     </option>
   </component>
@@ -227,7 +208,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560755458490" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560755959963" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -279,12 +260,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560736893550</updated>
-      <workItem from="1560736901794" duration="18483000" />
+      <workItem from="1560736901794" duration="18993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18483000" />
+    <option name="totallyTimeSpent" value="18993000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,8 +297,8 @@
       <window_info anchor="bottom" id="Messages" weight="0.32983193" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39915967" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32983193" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39915967" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
@@ -372,9 +353,21 @@
     <entry file="file://$PROJECT_DIR$/PeriodData/3.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="240" column="83" selection-start-line="240" selection-start-column="83" selection-end-line="240" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8091#8092#0" expanded="true" />
+            <element signature="e#8108#8109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/DatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
+        <state relative-caret-position="535">
           <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -384,10 +377,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/RandomStudent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/Period.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        <state relative-caret-position="225">
+          <caret line="51" column="45" lean-forward="true" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#341#342#0" expanded="true" />
@@ -395,32 +398,8 @@
             <element signature="e#790#791#0" expanded="true" />
             <element signature="e#825#826#0" expanded="true" />
             <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/RandomStudent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="193" column="78" selection-start-line="193" selection-start-column="78" selection-end-line="193" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8091#8092#0" expanded="true" />
-            <element signature="e#8108#8109#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
           </folding>
         </state>
       </provider>

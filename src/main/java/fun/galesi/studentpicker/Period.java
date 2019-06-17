@@ -51,8 +51,11 @@ public class Period
 
 	public void addStudent(String studentName)
 	{
-		databaseHandler.write(studentName);
-		studentNames.add(studentName);
+		if (!studentNames.contains(studentName))
+		{
+			databaseHandler.write(studentName);
+			studentNames.add(studentName);
+		}
 	}
 
 	public String getRandomStudent()

@@ -189,6 +189,7 @@ public class GUI
 		submit.setBackground(Color.WHITE);
 		submit.setForeground(green);
 		submit.setLocation(350, 400);
+		frame.getRootPane().setDefaultButton(submit); // Adds enter functionality
 		submit.addActionListener(e -> {
 			System.out.println(text.getText());
 			RandomStudent.getPeriodByName(options.getSelectedItem().toString()).addStudent(text.getText());
@@ -213,6 +214,8 @@ public class GUI
 		submit.setForeground(new Color(155, 197, 61));
 		submit.setSize(100, 50);
 		submit.setLocation(60, 105);
+		frame.getRootPane().setDefaultButton(submit); // Adds enter functionality
+
 		submit.addActionListener(e -> {
 
 			String periodName = text.getText();
@@ -235,6 +238,7 @@ public class GUI
 		frame.add(name);
 		generate.setSize(100, 25);
 		generate.setLocation(350, 400);
+		frame.getRootPane().setDefaultButton(generate); // Adds enter functionality
 		frame.add(generate);
 	}
 
