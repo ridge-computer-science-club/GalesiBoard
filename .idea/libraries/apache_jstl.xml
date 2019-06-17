@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="apache-jstl">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/lib/apache-jstl/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/lib/apache-jstl/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

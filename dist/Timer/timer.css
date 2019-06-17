@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    margin-top: 200px;
+    background-color:  rgb(250,131,33);
+}
+
+.timer{
+    font-family: consolas;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.61);
+}
+button{
+    width: 100px;
+    height: 35px;
+}
+
+button:hover{
+    cursor: pointer;
+}

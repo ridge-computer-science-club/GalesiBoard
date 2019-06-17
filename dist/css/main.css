@@ -1,4 +1,49 @@
-@media only screen {
+@media only screen and (max-width:420px){
+    h1.Galesiboard{
+        font-size: 3em;
+        margin-left: 1.5em;
+    }
+    div.descriptionBox{
+        width: 15em;
+        padding: 1em;
+    }
+    div.mdc-text-field{
+        left: 10%;
+    }
+    h1.featureHeader{
+        margin-left: 1em;
+        margin-right: em;
+    }
+    .allFeatures{
+        display: grid;
+        grid-row-gap: 0.5em;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .allFeatures>div:nth-child(1){
+        grid-column: 1/5;
+        grid-row:1/2;
+    }
+
+    .allFeatures>div:nth-child(2){
+        grid-column: 1/5;
+        grid-row:2/3;
+    }
+    .allFeatures>div:nth-child(3){
+        grid-column: 1/5;
+        grid-row:3/4;
+    }
+    .allFeatures>div:nth-child(4){
+        grid-column: 1/5;
+        grid-row:4/5;
+    }
+    button.loadMore {
+        left: -10em;
+    }
+    img.pictures{
+        height: 20em;
+    }
+}
     .featureHeader {
         grid-area: featureHeader;
     }
@@ -40,6 +85,16 @@
         color: #5bc0eb;
         text-align: center;
         font-family: LED;
+        background-color: white;
+        padding-top: 0.2em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        padding-bottom: 0.2em;
+        border-radius: 1em;
+        vertical-align: middle;
+        margin-left: 6em;
+        margin-right: 6em;
+        margin-bottom: 0.5em;
     }
 
     .allFeatures {
@@ -56,7 +111,7 @@
 
     .featuresBox {
         padding: 1em;
-        font-size: 3em;
+        font-size: 1.5em;
         text-align: center;
         border-radius: 1em;
         align-self: center;
@@ -64,7 +119,7 @@
     }
 
     .allFeatures>div {
-        background-color: #5BC0EB;
+        background-color: #e55934;
     }
 
     .allFeatures>div:nth-child(odd) {
@@ -72,7 +127,7 @@
     }
 
     .allFeatures>div:hover {
-        background-color: rgb(141, 209, 238);
+        background-color: #df876e;
     }
 
     .allFeatures>div:nth-child(odd):hover {
@@ -98,8 +153,22 @@
 
     }
 
-    .descriptionBox:hover {
-        background-color: #9ac53dad;
+    ::-webkit-input-placeholder {
+        color:white !important;
+    }
+    
+    ::-moz-placeholder {
+        color:white !important;
+    }
+    
+    ::-ms-placeholder {
+        color:white !important;
+
+    }
+    
+    ::placeholder {
+        color:white !important;
+
     }
 
     .button {
@@ -129,36 +198,40 @@
 
     .Galesiboard {
         font-size: 6em;
+        border: 0.05em solid #5bc0eb;
         text-align: center;
         font-family: 'LED';
         grid-area: title;
         justify-self: center;
         align-self: center;
-        margin-top: 1em;
+        margin-top: 0.2em;
         color: #5bc0eb;
+        background-color: white;
+        padding-top: 0.2em;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-bottom: 0.1em;
+        border-radius: 1em;
+        vertical-align: middle;
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-bottom: 0.5em;
 
     }
 
-    .mdc-text-field {
-        position: relative;
-        top: 90%;
-        left: 40%;
-    }
 
     .loadMore {
         background-color: #5bc0eb;
         border: none;
         color: white;
-        padding: 0.7em 2.5em;
-        text-align: right;
+        padding: 0.7em 0.7em;
+        text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 1.5em;
         border-radius: 0.75em;
         vertical-align: middle;
-        position: relative;
-        top: 60%;
-        left: 41%;
+        
         font-family: monospace;
     }
 
@@ -166,7 +239,7 @@
         background-color: white;
         color: #5bc0eb;
         border: 0.167em solid #5bc0eb;
-        padding: 0.5em 2.3em;
+        padding: 0.5em 0.5 em;
         box-shadow: 0 0.75em 1em 0 rgba(0, 0, 0, 0.24), 0 1.063em 4.167em 0 rgba(0, 0, 0, 0.19);
     }
 
@@ -186,7 +259,6 @@
 
     .wrapper {
         display: grid;
-        /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
         grid-row-gap: 0em;
         grid-auto-rows: minmax(100px, auto);
         grid-template-areas:
@@ -197,15 +269,14 @@
 
     .w3-content {
         grid-area: pictures;
-        /*grid-column: 4/5;
-  grid-row: 1/4;*/
     }
 
     /* Popup container  */
     .popup {
-        position: relative;
-        display: inline-block;
+       /* position: relative;
+        display: inline-block;*/
         cursor: pointer;
+        border-radius: 0.75em;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -215,17 +286,29 @@
     /* The actual popup */
     .popup .popuptext {
         visibility: hidden;
-        width: 500px;
-        background-color: #555;
+        position: fixed;
+        top: 1em;
+        border: 0.167em solid #5bc0eb;
+
+        background-color: rgb(250,131,33);
         color: #fff;
+
         text-align: center;
-        border-radius: 6px;
-        padding: 8px 0;
-        position: absolute;
+        border-radius: 0.75em;
         z-index: 1;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -80px;
+
+        padding-top: 0.2em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        padding-bottom: 0.2em;
+
+        vertical-align: middle;
+        display: inline-block;
+
+        margin-bottom: 0.5em;
+        left: 10%;
+        right: 10%;
+        margin-left: 0em;
     }
 
 
@@ -256,5 +339,9 @@
             opacity: 1;
         }
     }
-
-}
+    
+    .timer{
+        font-size: 6em;
+        font-family: monospace;
+        color:white;
+    }
