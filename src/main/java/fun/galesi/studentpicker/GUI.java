@@ -1,23 +1,12 @@
+package fun.galesi.studentpicker;
 /*
- * Decompiled with CFR 0.139.
- */
-import java.awt.Component;
 import java.awt.Font;
-import java.awt.LayoutManager;
 import java.awt.Menu;
 import java.awt.MenuBar;
 import java.awt.MenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.Reader;
-import java.io.Writer;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -26,46 +15,43 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.Color;
-import java.awt.GraphicsEnvironment;
 import javax.swing.AbstractButton;
+
 import arduino.*;
 
 public class GUI {
-    public static void main(String[] args) {
 
+    private static final Color BLUE = new Color(91, 192, 235);
+    private static final Color GREEN = new Color(155, 197, 61);
+    private static final Color ORANGE = new Color(250, 131, 33);
 
+    private JComboBox<String> options;
 
-        Color blue = new Color(91, 192, 235);
-        Color green = new Color(155, 197, 61);
-        Color orange = new Color(250, 131, 33);
+    private JFrame frame;
+    private JPanel mainPanel;
+    private JLabel name;
 
-        final ArrayList<String> classNames = new ArrayList<String>();
-        final JComboBox<String> options = new JComboBox<String>();
-        String classes = GUI.reader("allClasses");
-        classes = classes.replace("\n", ",");
-        System.out.println(classes);
-        String main = "";
-        for (int i = 0; i < classes.length(); ++i) {
-            String temp = classes.substring(i, i + 1);
-            if (!temp.equals(",")) {
-                main = String.valueOf(main) + temp;
-            } else {
-                classNames.add(main);
-                main = "";
-            }
-            System.out.println(main);
-        }
-        final JFrame frame = new JFrame("RandomNamePicker(Beta v1.0.1)");
+    private ArrayList names;
+
+    private RandomStudent randomStudent;
+
+    public GUI() {
+
+        randomStudent = new RandomStudent();
+        options = new JComboBox<>();
+
+        frame = new JFrame("RandomNamePicker(Beta v1.0.1)");
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(3);
-        final JPanel mainPanel = new JPanel();
+
+        mainPanel = new JPanel();
         mainPanel.setLayout(null);
         mainPanel.setSize(700, 500);
-        mainPanel.setBackground(blue);
+        mainPanel.setBackground(BLUE);
         mainPanel.setVisible(true);
         frame.add(mainPanel);
         GUI.makeBackground(mainPanel);
-        GUI.addCombo(options, classNames, mainPanel);
+        GUI.addCombo(options, randomStudent.getPeriodNames(), mainPanel);
         frame.setSize(700, 500);
         frame.setLayout(null);
         frame.setVisible(true);
@@ -73,85 +59,62 @@ public class GUI {
         options.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 12));
         options.setSize(200, 30);
         options.setLocation(470, 220);
-        options.setForeground(orange);
+        options.setForeground(ORANGE);
         mainPanel.add(options);
-        final JLabel name = new JLabel(" Select a Class and Generate...");
+
+        name = new JLabel(" Select a Class and Generate...");
         name.setLocation(10, 25);
         name.setSize(500, 100);
         name.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 100));
         name.setOpaque(true);
         name.setBackground(Color.WHITE);
-        name.setForeground(orange);
+        name.setForeground(ORANGE);
         mainPanel.add(name);
-        final ArrayList names = new ArrayList();
+
+        names = new ArrayList();
         JButton bgenerate = new JButton("GENERATE");
         bgenerate.setFont(new Font("Advanced LED Board-7", Font.PLAIN, 10));
-        bgenerate.setBackground(green);
-        bgenerate.setForeground(green);
+        bgenerate.setBackground(GREEN);
+        bgenerate.setForeground(GREEN);
         bgenerate.setVerticalTextPosition(AbstractButton.CENTER);
-        bgenerate.addActionListener(new ActionListener(){
+        bgenerate.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                names.clear();
-                String chooseNames = GUI.reader((String)options.getSelectedItem());
-                chooseNames = chooseNames.replaceAll("\n", ",");
-                String main = "";
-                for (int i = 0; i < chooseNames.length(); ++i) {
-                    String temp = chooseNames.substring(i, i + 1);
-                    if (!temp.equals(",")) {
-                        main = String.valueOf(main) + temp;
-                        continue;
-                    }
-                    names.add(main);
-                    main = "";
-                }
-                if (names.size() > 0) {
-                    String chosenName = (String)names.get((int)(Math.random() * (double)(names.size() + 1)));
-                    name.setText(" " + chosenName);
-                    Arduino arduino = new Arduino("cu.usbmodem14101", 9600);
-                    arduino.openConnection();
-                    arduino.serialWrite(chosenName);
-                    arduino.closeConnection();
-                } else {
-                    name.setText(" No Name Yet...");
-                    Arduino arduino = new Arduino("cu.usbmodem14101", 9600);
-                    arduino.openConnection();
-                    arduino.serialWrite("uwu");
-                    arduino.closeConnection();
-                }
-                mainPanel.repaint();
-                frame.repaint();
+                getStudent();
             }
         });
+
         GUI.makeGenerate(mainPanel, bgenerate, name);
         MenuBar menuBar = new MenuBar();
         Menu mode = new Menu("Mode");
         Menu delete = new Menu("Delete");
         MenuItem add = new MenuItem("Add Students");
-        add.addActionListener(new ActionListener(){
+        add.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 mainPanel.removeAll();
-                GUI.addStudents(mainPanel, (String)options.getSelectedItem());
-                GUI.addCombo((JComboBox<String>)options, (ArrayList<String>)classNames, mainPanel);
+                GUI.addStudents(mainPanel, (String) options.getSelectedItem());
+                GUI.addCombo((JComboBox<String>) options, randomStudent.getPeriodNames(), mainPanel);
             }
         });
+
         MenuItem generate = new MenuItem("Generate");
-        generate.addActionListener(new ActionListener(){
+        generate.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 mainPanel.removeAll();
                 GUI.makeBackground(mainPanel);
                 GUI.makeGenerate(mainPanel, bgenerate, name);
-                GUI.addCombo((JComboBox<String>)options, (ArrayList<String>)classNames, mainPanel);
+                GUI.addCombo((JComboBox<String>) options, randomStudent.getPeriodNames(), mainPanel);
                 frame.repaint();
             }
         });
+
         MenuItem className = new MenuItem("Add Class");
-        className.addActionListener(new ActionListener(){
+        className.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -159,14 +122,15 @@ public class GUI {
                 classPop.setVisible(true);
                 classPop.setSize(250, 220);
                 classPop.setLayout(null);
-                GUI.makeClass(classPop, classNames, mainPanel, options);
+                GUI.makeClass(classPop, randomStudent.getPeriodNames(), mainPanel, options);
                 classPop.repaint();
                 mainPanel.repaint();
                 frame.repaint();
             }
         });
+
         MenuItem deleteClass = new MenuItem("Delete Class");
-        deleteClass.addActionListener(new ActionListener(){
+        deleteClass.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -176,29 +140,28 @@ public class GUI {
                 deleteC.setVisible(true);
                 JButton delete = new JButton("Delete");
                 final JComboBox<String> selectD = new JComboBox<String>();
-                GUI.addCombo(selectD, (ArrayList<String>)classNames, deleteC);
+                GUI.addCombo(selectD, (ArrayList<String>) randomStudent.getPeriodNames(), deleteC);
                 selectD.setSize(210, 35);
                 selectD.setLocation(10, 30);
                 delete.setSize(100, 25);
                 delete.setLocation(70, 100);
-                delete.addActionListener(new ActionListener(){
+                delete.addActionListener(new ActionListener() {
 
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         try {
-                            File toDelete = new File(String.valueOf((String)selectD.getSelectedItem()) + ".txt");
+                            File toDelete = new File(String.valueOf((String) selectD.getSelectedItem()) + ".txt");
                             toDelete.delete();
-                        }
-                        catch (Exception f) {
+                        } catch (Exception f) {
                             f.printStackTrace();
                         }
                         classNames.remove(selectD.getSelectedItem());
                         GUI.clear("allClasses");
                         for (int i = 0; i < classNames.size(); ++i) {
-                            GUI.writer((String)classNames.get(i), "allClasses");
+                            GUI.writer((String) classNames.get(i), "allClasses");
                         }
-                        GUI.addCombo((JComboBox<String>)selectD, (ArrayList<String>)classNames, deleteC);
-                        GUI.addCombo((JComboBox<String>)options, (ArrayList<String>)classNames, mainPanel);
+                        GUI.addCombo((JComboBox<String>) selectD, (ArrayList<String>) classNames, deleteC);
+                        GUI.addCombo((JComboBox<String>) options, (ArrayList<String>) classNames, mainPanel);
                         deleteC.repaint();
                         mainPanel.repaint();
                         frame.repaint();
@@ -220,45 +183,40 @@ public class GUI {
         frame.repaint();
     }
 
-    public static String reader(String file) {
-        String returnString = "";
-        String line = null;
-        try {
-            FileReader reader = new FileReader(String.valueOf(file) + ".txt");
-            BufferedReader bReader = new BufferedReader(reader);
-            while ((line = bReader.readLine()) != null) {
-                System.out.print(String.valueOf(line) + "\n");
-                returnString = String.valueOf(returnString) + line + "\n";
+
+    public void getStudent()
+    {
+        names.clear();
+        String chooseNames = GUI.reader((String) options.getSelectedItem());
+        chooseNames = chooseNames.replaceAll("\n", ",");
+        String main = "";
+        for (int i = 0; i < chooseNames.length(); ++i) {
+            String temp = chooseNames.substring(i, i + 1);
+            if (!temp.equals(",")) {
+                main = String.valueOf(main) + temp;
+                continue;
             }
-            bReader.close();
+            names.add(main);
+            main = "";
         }
-        catch (IOException e) {
-            e.printStackTrace();
+        if (names.size() > 0) {
+            String chosenName = (String) names.get((int) (Math.random() * (double) (names.size() + 1)));
+            name.setText(" " + chosenName);
+            Arduino arduino = new Arduino("cu.usbmodem14101", 9600);
+            arduino.openConnection();
+            arduino.serialWrite(chosenName);
+            arduino.closeConnection();
+        } else {
+            name.setText(" No Name Yet...");
+            Arduino arduino = new Arduino("cu.usbmodem14101", 9600);
+            arduino.openConnection();
+            arduino.serialWrite("uwu");
+            arduino.closeConnection();
         }
-        return returnString;
+        mainPanel.repaint();
+        frame.repaint();
     }
 
-    public static void writer(String toWrite, String loc) {
-        try {
-            PrintWriter write = new PrintWriter(new FileWriter(String.valueOf(loc) + ".txt", true));
-            write.write(toWrite);
-            write.close();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void clear(String loc) {
-        try {
-            PrintWriter write = new PrintWriter(new FileWriter(String.valueOf(loc) + ".txt", false));
-            write.write("");
-            write.close();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static JTextField createText(JPanel frame) {
         JTextField text = new JTextField();
@@ -288,7 +246,7 @@ public class GUI {
         submit.setBackground(Color.WHITE);
         submit.setForeground(green);
         submit.setLocation(350, 400);
-        submit.addActionListener(new ActionListener(){
+        submit.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -315,7 +273,7 @@ public class GUI {
         submit.setForeground(new Color(155, 197, 61));
         submit.setSize(100, 50);
         submit.setLocation(60, 105);
-        submit.addActionListener(new ActionListener(){
+        submit.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -323,7 +281,7 @@ public class GUI {
                 GUI.writer("", text.getText());
                 GUI.writer(String.valueOf(text.getText()) + "\r\n", "allClasses");
                 classNames.add(text.getText());
-                GUI.addCombo((JComboBox<String>)options, (ArrayList<String>)classNames, panel);
+                GUI.addCombo((JComboBox<String>) options, (ArrayList<String>) classNames, panel);
                 text.setText("");
             }
         });
@@ -375,3 +333,4 @@ public class GUI {
 
 }
 
+*/
