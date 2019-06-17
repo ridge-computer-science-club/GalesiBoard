@@ -1,5 +1,6 @@
 package fun.galesi.webserver;
 
+import fun.galesi.studentpicker.GUI;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;
@@ -10,6 +11,8 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 
 public class JettyMain {
     public static void main(String[] args) throws Exception {
+
+    	/*
 
         // Create a basic Jetty server object that will listen on port 8080.  Note that if you set this to port 0
         // then a randomly available port will be assigned that you can either look in the logs for the port,
@@ -40,6 +43,9 @@ public class JettyMain {
         server.start();
         server.join();
 
+*/
+
+	    GUI gui = new GUI();
 
     }
 

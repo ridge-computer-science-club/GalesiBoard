@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jetty-spring-9.4.19.v20190610">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/lib/spring/jetty-spring-9.4.19.v20190610.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

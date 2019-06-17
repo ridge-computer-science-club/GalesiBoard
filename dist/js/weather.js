@@ -1,5 +1,5 @@
 function dateTime() {
-    document.getElementById("datetimeintro").innerHTML = ("Today's date and time is:")
+    document.getElementById("datetimeintro").innerHTML = ("Today's date and time is:");
     var dt = new Date();
     document.getElementById("datetime").innerHTML = (("0" + (dt.getMonth() + 1)).slice(-2)) + "/" + (("0" + dt.getDate()).slice(-2)) +
         "/" + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
@@ -66,7 +66,7 @@ function post() {
         wind: document.getElementById("wind").innerHTML,
         rain: document.getElementById("rain").innerHTML,
         seetime: document.getElementById("seetime").innerHTML
-    }
+    };
 
     test = fetch(Url, {
         method: 'POST',
@@ -82,7 +82,7 @@ function post() {
     }).then(data => {
         console.log(data);
         return data;
-    });
+})
     /*
         $.post(Url, dada, function(dada, status) {
             console.log('${dada} and status is ${status}')

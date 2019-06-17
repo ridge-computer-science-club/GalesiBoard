@@ -10,7 +10,7 @@ function postInput() {
     const Url = 'http://localhost:8080/post/';
     const dada = {
         input: document.getElementById("text-field-fullwidth-helper").value
-    }
+    };
 
     test = fetch(Url, {
         method: 'POST',
@@ -26,5 +26,5 @@ function postInput() {
     }).then(data => {
         console.log(data);
         return data;
-    });
+})
 }
