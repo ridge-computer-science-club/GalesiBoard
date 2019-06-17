@@ -79,15 +79,16 @@
     </div>
     </div>
     <br>
-    <button class="button" id="button" onclick="postInput()">Post to GalesiBoard!</button>
-    <br></br>
-    <br><br>
+    <div style="text-align: center;">
+        <button class="loadMore" onclick="postInput()">Post to GalesiBoard!</button>
+    </div>
+    <br>
     <h1 class="featureHeader">
         Features
     </h1>
     <p>
         <div class="allFeatures">
-            <div class="popup featuresBox" style="font-size:2em" onclick="popUpWeather(); postWeatherDateTime()">Show Weather, Date, and
+            <div class="popup featuresBox" style="font-size:2em" onclick="popUpWeather(); postWeatherDateTime()">Weather, Date, and
                 Time
                 <span class="popuptext" id="myPopup" style="width:38em">
                     <p id="text"></p>
@@ -102,9 +103,9 @@
                     <button onclick="post()">Post this to GalesiBoard</button>
                 </span>
             </div>
-            <div class="featuresBox">2</div>
-            <div class="featuresBox">3</div>
-            <div class="featuresBox">4</div>
+            <div class="featuresBox">Timer</div>
+            <div class="featuresBox">Stop Watch</div>
+            <div class="featuresBox">Applause</div>
         </div>
     </p>
     <script>
@@ -115,7 +116,10 @@
     
     </script>
     <br></br>
-    <button class="loadMore" id="button">Load More Features</button>
+    <div style="text-align: center;">
+        <button class="loadMore" id="button" style="margin-bottom: 2em;">Load More Features</button>
+    </div>
+    
 </body>
 
 </html>
