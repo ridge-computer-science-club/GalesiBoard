@@ -1,45 +1,70 @@
 package fun.galesi.studentpicker;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class RandomStudent {
+public class RandomStudent
+{
 
-    private static DatabaseHandler periodDatabaseHandler;
-    private static ArrayList<Period> Periods;
+	private static DatabaseHandler periodDatabaseHandler;
+	private static ArrayList<Period> Periods;
 
-    public static ArrayList<String> getPeriodNames() {
-        return Periods
-                .stream()
-                .map(Object::toString).collect(Collectors.toCollection(ArrayList::new));
-    }
+	public static Period getPeriodByName(String periodName)
+	{
+		for (Period period : Periods)
+		{
+			if (periodName.equals(period.toString()))
+			{
+				return period;
+			}
+		}
+
+		System.err.println("Couldn't find a period of name " + periodName);
+		return Periods.get(0); // Couldn't find period of that name
+	}
+
+	public static ArrayList<String> getPeriodNames()
+	{
+		return Periods
+				.stream()
+				.map(Object::toString).collect(Collectors.toCollection(ArrayList::new));
+	}
 
 
-    public static void main(String[] args) {
-        periodDatabaseHandler = new DatabaseHandler("allClasses");
+	public RandomStudent()
+	{
+		periodDatabaseHandler = new DatabaseHandler("allClasses");
 
-        Periods = periodDatabaseHandler.readLines()
-                .stream()
-                .map(Period::new).collect(Collectors.toCollection(ArrayList::new));
+		Periods = periodDatabaseHandler.readLines()
+				.stream()
+				.map(Period::new).collect(Collectors.toCollection(ArrayList::new));
+	}
 
-        addPeriod("3");
-        addPeriod("Period 5");
+	public static void addPeriod(String periodName)
+	{
+		for (Period period : Periods)
+		{
+			if (periodName.equals(period.toString()))
+			{
+				return;
+			}
+		}
 
-        Periods.get(0).addStudent("Shrey");
-        Periods.get(1).addStudent("Not");
+		periodDatabaseHandler.write(periodName);
+		Periods.add(new Period(periodName));
+	}
 
-        Periods.get(0).addStudent("You");
+	public static void removePeriod(String periodName)
+	{
+		int index = getPeriodNames().indexOf(periodName);
 
-
-        Periods.forEach(period -> period.getStudentNames().forEach(System.out::println));
-    }
-
-    public static void addPeriod(String periodName) {
-        if (!getPeriodNames().contains(periodName))
-        {
-            periodDatabaseHandler.write(periodName);
-            Periods.add(new Period(periodName));
-        }
-    }
+		if (index != -1)
+		{
+			periodDatabaseHandler.removeLine(periodName);
+			Periods.get(index).deletePeriod();
+			Periods.remove(index);
+		}
+	}
 
 }

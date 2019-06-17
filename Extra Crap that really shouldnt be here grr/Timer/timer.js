@@ -13,4 +13,4 @@ toggleBtn.addEventListener("click", function() {
 
 resetBtn.addEventListener("click", function () {
     watch.reset();
-})
+});

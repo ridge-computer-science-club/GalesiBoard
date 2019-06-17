@@ -32,7 +32,7 @@ clicker.addEventListener("click", function countdown()
                     var time = z;
                     while(time>0)
                         {
-                        time-=1
+                        time-=1;
                         var formattedTime = timeFormatter(time);
                         document.getElementById("stopWatch").innerHTML=formattedTime;
                         }
