@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.stream.Collectors;
+import arduino.*;
 
 public class PostServlet extends HttpServlet {
     @Override
@@ -20,6 +21,14 @@ public class PostServlet extends HttpServlet {
         // Write your code here that uses data.
 
         System.out.println(data);
+        Arduino arduino = new Arduino("cu.usbmodem14101", 9600); //Replace with the correct port
+        arduino.openConnection();
+        arduino.serialWrite((String)data);
+        arduino.closeConnection();
+        //make sure you have the library installed idk how to import it from within the repo oops
+
+
+
 
         response.setContentType("text/plain");
         response.setStatus(HttpStatus.OK_200);
