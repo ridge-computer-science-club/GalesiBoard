@@ -9,10 +9,8 @@
 */
 void writeText(const char text[], const CRGB colour, const size_t x, const size_t y, CRGB (&ledArray)[ROWS][COLS])
 {
-    // Loop through each character in the given string of text.
-    for (size_t textIndex = 0; textIndex < strlen(text); ++textIndex)
+    for (int textIndex = 0; textIndex < strlen(text); ++textIndex)
     {
-        // The
         const uint8_t asciiCodeOffset = text[textIndex] - STARTING_CHAR;
 
         for (int characterRow = 0; characterRow < CHARACTER_SIZE; ++characterRow)
@@ -27,14 +25,14 @@ void writeText(const char text[], const CRGB colour, const size_t x, const size_
                 if (ledRow < 0)
                     continue;
 
-                const size_t ledCol = (CHARACTER_SIZE - (bit + 1)) + ((CHARACTER_SIZE + 1) * textIndex) + x;
+                const size_t ledCol = (bit) + ((CHARACTER_SIZE + 1) * textIndex) + x;
                 // Check if text overflows array, break to prevent writing out of bounds.
                 if (ledCol > (COLS - 1))
                     continue;
                 if (ledCol < 0)
                     break;
                 //
-                const bool isPixel = (characters[asciiCodeOffset][characterRow] >> bit) & 0x1;
+                const bool isPixel = (characters[asciiCodeOffset][characterRow] << bit) & 0b10000000;
                 ledArray[ledRow][ledCol] = isPixel ? colour : CRGB::Black;
             }
         }

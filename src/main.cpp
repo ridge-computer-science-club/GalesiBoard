@@ -1,9 +1,6 @@
 /*
 This is the program to control GalesiBoard. It currently displays animated text on the board.
 */
-
-// These statements include the libraries and external files that we are using, and tell the compiler that we want to use code from them. 'Libraries' are pieces of code that have already been written (typically by someone other than yourself), so that you don't have to write everything from scratch every time you want to make a program.
-
 // This library is the Arduino Standard Library, which provides all the basic functionality that the hardware provides (for example: timing, input and output, the loop() and setup() functions).
 #include <Arduino.h>
 
@@ -19,24 +16,23 @@ This is the program to control GalesiBoard. It currently displays animated text 
 // This is the file which contains the writeText function used to display text.
 #include <writeText.hpp>
 
+
 CRGB leds[ROWS][COLS] = {0};
 CRGB bottom[COLS];
 
 void setup()
 {
-  FastLED.addLeds<LED_TYPE, 23>(leds[0], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 22>(leds[1], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 21>(leds[2], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 20>(leds[3], COLS).setCorrection(TypicalLEDStrip);
-  FastLED.addLeds<LED_TYPE, 10>(leds[4], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 13, COLOUR_ORDER>(leds[0], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 12, COLOUR_ORDER>(leds[1], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 14, COLOUR_ORDER>(leds[2], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 27, COLOUR_ORDER>(leds[3], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 26, COLOUR_ORDER>(leds[4], COLS).setCorrection(TypicalLEDStrip);
 
-  FastLED.addLeds<LED_TYPE, 9>(bottom, COLS).setCorrection(TypicalLEDStrip);
 
   FastLED.setBrightness(BRIGHTNESS);
 
-  // initialize serial communication:
   Serial.begin(9600);
-  Serial.println("<Arduino is ready>");
+  Serial.println("starting");
 }
 
 // Serial handling from https://forum.arduino.cc/index.php?topic=396450
@@ -83,14 +79,33 @@ void recieveData()
 
 void loop()
 {
- // recieveData();
-writeText("HI", CRGB::Red, 0, 0, leds);
- /*  if (newData)
+  /* 
+  for (int i = 80; i > 6; i--)
   {
+    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
+    if (print.length()<13){  
+      writeText(print.c_str(), CRGB::Green, i, 0, leds);}
+    else{
+      writeText(print.substring(0,print.indexOf(" ")+1).c_str(), CRGB::Green, i, 6, leds);
+      writeText(print.substring(print.indexOf(" ")+1).c_str(), CRGB:: Green, i, 0, leds);
+    }
+    delay(50);
+    FastLED.show();
+  }
+  */
+  recieveData();
+ 
+  if (newData)
+  {
+
+    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
+
     Serial.print("Received: ");
     Serial.println(textBuffer);
     writeText(textBuffer, CRGB::Cyan, 0, 0, leds);
     newData = false;
+    FastLED.show();
   }
-  */
+
+  delay(10);
 }

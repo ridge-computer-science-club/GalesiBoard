@@ -9,10 +9,10 @@ constexpr size_t COLS = 77;
 // The specific type of LED being controlled, so the FastLED library knows how to format the transmitted colour data.
 #define LED_TYPE WS2812B
 // The order in which the LED accepts colour data - [R]ed, [G]reen, [B]lue.
-#define COLOR_ORDER RGB
+#define COLOUR_ORDER GRB
 
-constexpr char START_TEXT = '<'; //0x02;
-constexpr char END_TEXT = '>';   //0x03;
+constexpr char START_TEXT = '<'; //0x02; // STX, Start transmission
+constexpr char END_TEXT = '>';   //0x03; // ETX, End transmission
 
 constexpr char STARTING_CHAR = ' ';
 constexpr uint8_t CHARACTER_SIZE = 5;
