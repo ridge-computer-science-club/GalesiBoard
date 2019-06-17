@@ -1,6 +1,8 @@
 package fun.galesi.webserver;
 
+import arduino.Arduino;
 import fun.galesi.studentpicker.GUI;
+import fun.galesi.studentpicker.RandomStudent;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;
@@ -12,18 +14,23 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 public class JettyMain {
     public static void main(String[] args) throws Exception {
 
-    	/*
+	    RandomStudent randomStudent = new RandomStudent();
+	    Arduino arduino = new Arduino("/dev/TTYUSB0", 9600); //Replace with the correct port
 
         // Create a basic Jetty server object that will listen on port 8080.  Note that if you set this to port 0
         // then a randomly available port will be assigned that you can either look in the logs for the port,
         // or programmatically obtain it for use in test cases.
-        Server server = new Server(8080);
+        Server server = new Server(80);
 
 
         ServletContextHandler servletContextHandler = new ServletContextHandler(server, "/post/");
         servletContextHandler.addServlet(PostServlet.class, "/");
 
-        // Create the ResourceHandler. It is the object that will actually handle the request for a given file. It is
+        // Pass objects to post handler
+        servletContextHandler.setAttribute("randomStudent", randomStudent);
+	    servletContextHandler.setAttribute("arduino", arduino);
+
+	    // Create the ResourceHandler. It is the object that will actually handle the request for a given file. It is
         // a Jetty Handler object so it is suitable for chaining with other handlers as you will see in other examples.
         ResourceHandler resource_handler = new ResourceHandler();
 
@@ -42,10 +49,6 @@ public class JettyMain {
         // See "http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Thread.html#join()" for more details.
         server.start();
         server.join();
-
-*/
-
-	    GUI gui = new GUI();
 
     }
 
