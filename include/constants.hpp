@@ -1,7 +1,7 @@
 // These are constants that we define for our program, such as what type of LEDs we are using, how bright we want the LED to be, and the refresh rate (update rate) of the LED.
 
 // How many LEDs are in each coloumn and row.
-constexpr size_t ROWS = 5;
+constexpr size_t ROWS = 10;
 constexpr size_t COLS = 77;
 
 // How bright the LEDs should be, on a scale from 0 to 255.
@@ -11,8 +11,8 @@ constexpr size_t COLS = 77;
 // The order in which the LED accepts colour data - [R]ed, [G]reen, [B]lue.
 #define COLOUR_ORDER GRB
 
-constexpr char START_TEXT = '<'; //0x02; // STX, Start transmission
-constexpr char END_TEXT = '>';   //0x03; // ETX, End transmission
+constexpr char START_TEXT = 0x02; // STX, Start transmission
+constexpr char END_TEXT = 0x03; // ETX, End transmission
 
 constexpr char STARTING_CHAR = ' ';
 constexpr uint8_t CHARACTER_SIZE = 5;

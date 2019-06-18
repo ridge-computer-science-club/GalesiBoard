@@ -28,6 +28,9 @@ void setup()
   FastLED.addLeds<LED_TYPE, 27, COLOUR_ORDER>(leds[3], COLS).setCorrection(TypicalLEDStrip);
   FastLED.addLeds<LED_TYPE, 26, COLOUR_ORDER>(leds[4], COLS).setCorrection(TypicalLEDStrip);
 
+  FastLED.addLeds<LED_TYPE, 25, COLOUR_ORDER>(leds[5], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 33, COLOUR_ORDER>(leds[6], COLS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, 32, COLOUR_ORDER>(leds[7], COLS).setCorrection(TypicalLEDStrip);
 
   FastLED.setBrightness(BRIGHTNESS);
 
@@ -79,32 +82,38 @@ void recieveData()
 
 void loop()
 {
-  /* 
-  for (int i = 80; i > 6; i--)
-  {
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-    if (print.length()<13){  
-      writeText(print.c_str(), CRGB::Green, i, 0, leds);}
-    else{
-      writeText(print.substring(0,print.indexOf(" ")+1).c_str(), CRGB::Green, i, 6, leds);
-      writeText(print.substring(print.indexOf(" ")+1).c_str(), CRGB:: Green, i, 0, leds);
-    }
-    delay(50);
-    FastLED.show();
-  }
-  */
+  
+ 
+  
   recieveData();
  
   if (newData)
   {
-
-    fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
-
     Serial.print("Received: ");
     Serial.println(textBuffer);
-    writeText(textBuffer, CRGB::Cyan, 0, 0, leds);
+    // writeText(textBuffer, CRGB::Cyan, 0, 0, leds);
     newData = false;
-    FastLED.show();
+    //FastLED.show();
+
+    String print(textBuffer);
+
+    for (int i = 80; i > 1; i--)
+    {
+      fill_solid(&(leds[0][0]), ROWS * COLS, CRGB::Black);
+      if (print.length() < 13)
+      {
+        writeText(print.c_str(), CRGB::Green, i, 5, leds);
+      }
+      else
+      {
+        writeText(print.substring(0, print.indexOf(" ") + 1).c_str(), CRGB::Green, i, 5, leds);
+        writeText(print.substring(print.indexOf(" ") + 1).c_str(), CRGB::Green, i, -1, leds);
+      }
+      delay(50);
+      FastLED.show();
+    }
+
+    
   }
 
   delay(10);
