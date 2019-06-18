@@ -25,10 +25,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        integrity="sha384-JjSmVcgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="js/weather.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/stopwatch.js"></script>
     <script src="js/input.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
@@ -38,11 +39,13 @@
     <div class="wrapper">
         <h1 class="Galesiboard">GALESIBOARD</h1>
         <figure class="w3-content">
-            <img class="pictures" src="/images/EditGalesi1.jpg.png">
-            <img class="pictures" src="/images/EditGalesi3.jpg">
-            <img class="pictures" src="/images/EditGalesi4.jpg">
-            <img class="pictures" src="/images/EditGalesi2.jpg">
-            <img class="pictures" src="/images/EditGalesi7.jpg">
+            <img class="pictures" src="/images/Galesi1.png">
+            <img class="pictures" src="/images/Galesi2.png">
+            <img class="pictures" src="/images/Galesi3.png">
+            <img class="pictures" src="/images/Galesi4.png">
+            <img class="pictures" src="/images/Galesi5.png">
+            <img class="pictures" src="/images/Galesi6.png">
+            <img class="pictures" src="/images/Galesi7.png">
         </figure>
         <div class="descriptionBox">
             Welcome to GalesiBoard! This is an interactive LED signboard made at the bequest of Lord Galesi, inhabitant
@@ -103,33 +106,76 @@
                     <div id="wind"></div>
                     <div id="rain"></div>
                     <p id="location"></p>
-                    <button class="button popup-button"  onclick="post()">Post this to GalesiBoard</button>
+                    <button class="button popup-button" onclick="post()">Post this to GalesiBoard</button>
                 </span>
-            </div> 
+            </div>
             <!-- The timerPopup() and stopwatchPopup() functions are in the weather.js file -->
-            <div class="popup featuresBox"  onclick="timerPopup()">Timer
+            <div class="popup featuresBox" onclick="timerPopup()">Stopwatch
                 <span class="popuptext" id="timerPopup">
                     <h1 class="timer">00 : 00 . 000</h1>
                     <button class="button popup-button" id="toggle" style="left: 0%;">Start</button>
                     <button class="button popup-button" id="reset" style="left: 0%; margin-bottom: .1em;">Reset</button>
                     <br>
-                    <button class="button popup-button"  onclick="post()">Post this to GalesiBoard</button>
+                    <button class="button popup-button" onclick="post()">Post this to GalesiBoard</button>
+                </span>
+            </div>
+            <div class="popup featuresBox" onclick="stopwatchPopup()">Timer
+                <span class="popuptext" id="stopwatchPopup"
+                    >
+                    <button class="button popup-button" id="clicker">Insert time</button>
+                    <h1 id="stopWatch">00 : 00 . 000</h1>
+                    <script>
+                        clicker.addEventListener("click", function countdown() {
+                            var x;
+                            var y;
+                            var time = prompt("Please enter the time You wish to start at", "00:00.000");
+                            if (time != null) {
+                                x = (parseInt(time.substring(0, 2), 10) * 60000) + (parseInt(time.substring(3, 5), 10) * 1000) + (parseInt(time.substring(6), 10));
+                                function timeFormatter(timeInMilliseconds) {
+                                    var time = new Date(timeInMilliseconds);
+                                    var minutes = time.getMinutes().toString();
+                                    var seconds = time.getSeconds().toString();
+                                    var milliseconds = time.getMilliseconds().toString();
+                                    if (minutes.length < 2) {
+                                        minutes = "0" + minutes;
+                                    }
+                                    if (seconds.length < 2) {
+                                        seconds = "0" + seconds;
+                                    }
 
-                </span>
-            </div>
-            <div class="popup featuresBox" onclick="stopwatchPopup()">Stop Watch
-                <span class="popuptext" id="stopwatchPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
-                    <iframe src="..\Timer\countdown.html" width="100%" height="100%"></iframe>
-                </span>
-            </div>
-            <div class="featuresBox">Applause</div>
-        </div>
-    </p>
-    <br></br>
-    <div style="text-align: center;">
-        <button class="loadMore" id="button" style="margin-bottom: 2em;">Load More Features</button>
-    </div>
+                                    while (milliseconds.length < 3) {
+                                        milliseconds = "0" + milliseconds;
+                                    }
+                                    return minutes + " : " + seconds + " . " + milliseconds;
+                                }
+                                y = timeFormatter(x);
+                                document.getElementById("stopWatch").innerHTML = y;
+                                function start(z) {
+                                    var time = z;
+                                    while (time > 0) {
+                                        time -= 1;
+                                        var formattedTime = timeFormatter(time);
+                                        document.getElementById("stopWatch").innerHTML = formattedTime;
+                                    }
+                                }
+                                start(x);
+                                document.getElementById("stopWatch").innerHTML = "Time's Up!";
+                            }
+                        }
+                        );
+                    </script>
+                    <button class="button popup-button" onclick="post()">Post this to GalesiBoard</button>
+
+                </span >
+            </div >
+                            <div class="featuresBox">Applause</div>
+        </div >
+    </p >
+                            <br></br>
+                            <div style="text-align: center;">
+                                <button class="loadMore" id="button" >Load More Features</button>
+                            </div>
     
-</body>
+</body >
 
-</html>
+</html >

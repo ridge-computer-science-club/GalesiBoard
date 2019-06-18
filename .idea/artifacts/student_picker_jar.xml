@@ -1,9 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="server:jar">
-    <output-path>$PROJECT_DIR$/</output-path>
-    <root id="archive" name="server.jar">
+  <artifact type="jar" name="student_picker:jar">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="archive" name="student_picker.jar">
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/fun/galesi/webserver/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/fun/galesi/studentpicker/META-INF/MANIFEST.MF" />
       </element>
       <element id="module-output" name="main" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jetty-distribution-9.4.19.v20190610/lib/servlet-api-3.1.jar" path-in-jar="/" />

@@ -2,7 +2,6 @@ package fun.galesi.webserver;
 
 import arduino.Arduino;
 import org.eclipse.jetty.http.HttpStatus;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 
