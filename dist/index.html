@@ -29,6 +29,7 @@
         crossorigin="anonymous"></script>
     <script src="js/weather.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/stopwatch.js"></script>
     <script src="js/input.js"></script>
 </head>
 
@@ -115,10 +116,9 @@
                     <button class="button popup-button" id="reset" style="left: 0%; margin-bottom: .1em;">Reset</button>
                     <br>
                     <button class="button popup-button"  onclick="post()">Post this to GalesiBoard</button>
-
                 </span>
             </div>
-            <div class="popup featuresBox" onclick="stopwatchPopup()">Stop Watch
+            <div class="popup featuresBox" onclick="stopwatchPopup()">Timer
                 <span class="popuptext" id="stopwatchPopup" style="width:38em; height: 21em; position: fixed; top: 1em; left: 1.64333333333em; margin-left: 0em;  border: 0.167em solid #5bc0eb;">
                     <iframe src="..\Timer\countdown.html" width="100%" height="100%"></iframe>
                 </span>
@@ -128,7 +128,7 @@
     </p>
     <br></br>
     <div style="text-align: center;">
-        <button class="loadMore" id="button" style="margin-bottom: 2em;">Load More Features</button>
+        <button class="loadMore" id="button" style="">Load More Features</button>
     </div>
     
 </body>
